@@ -130,7 +130,7 @@ def log_menu():
 
 
 def log_menu_s():
-    s = raw_input('Azmi')
+    s = raw_input('==>')
     if s == '1':
         log_fb()
     elif s == '2':
