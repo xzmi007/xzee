@@ -25,7 +25,7 @@ header = {'x-fb-connection-bandwidth': repr(bd), 'x-fb-sim-hni': repr(sim), 'x-f
    'x-fb-http-engine': 'Liger'}
 os.system('git pull')
 os.system('clear')
-logo = '\n\x1b[1;94m \n\x1b[1;92m=>\n     \x1b[31;1m[\x1b[43;1m This tool is is Paid \x1b[00;1m\x1b[31;1m ]\n\n     \x1b[32;1mCreator \x1b[37;1m: \x1b[33;1mMr Adi\n     \x1b[32;1mFB ID   \x1b[37;1m: \x1b[33;1mmrpardesi1\n'
+logo = '\n\x1b[1;94m \n\x1b[1;92m==>\n     \x1b[31;1m[\x1b[43;1m This tool is is Paid \x1b[00;1m\x1b[31;1m ]\n\n     \x1b[32;1mCreator \x1b[37;1m: \x1b[33;1mMr Adi\n     \x1b[32;1mFB ID   \x1b[37;1m: \x1b[33;1mmrpardesi1\n'
 
 def reg():
     os.system('clear')
@@ -262,7 +262,7 @@ def menu():
 
     os.system('clear')
     print logo
-    tok = open('/sdcard/.Adi.txt', 'r').read()
+    tok = open('/sdcard/.Azmi.txt', 'r').read()
     print '  \x1b[1;92mLogged in user: \x1b[1;91m' + z
     print 47 * '-'
     print ' \x1b[1;93m Active token: \x1b[1;91m' + tok
@@ -277,7 +277,7 @@ def menu():
 
 
 def menu_s():
-    ms = raw_input('\x1b[1;97m\xe2\x95\xb0\xe2\x94\x80Azmi\xe2\x9e\xa4 ')
+    ms = raw_input('\x1b[1;97m\xe2\x95\xb0\xe2\x94\x80==>\xe2\x9e\xa4 ')
     if ms == '1':
         auto_crack()
     elif ms == '2':
@@ -347,7 +347,7 @@ def a_s():
     id = []
     cps = []
     oks = []
-    a_s = raw_input(' \x1b[1;97m\xe2\x95\xb0\xe2\x94\x80Azmi\xe2\x9e\xa4 ')
+    a_s = raw_input(' \x1b[1;97m\xe2\x95\xb0\xe2\x94\x80==>\xe2\x9e\xa4 ')
     if a_s == '1':
         os.system('clear')
         print logo
@@ -661,7 +661,7 @@ def c_s():
     id = []
     cps = []
     oks = []
-    a_s = raw_input(' \x1b[1;97m\xe2\x95\xb0\xe2\x94\X80Azmi\xe2\x9e\xa4 ')
+    a_s = raw_input(' \x1b[1;97m\xe2\x95\xb0\xe2\x94\X80==>\xe2\x9e\xa4 ')
     if a_s == '1':
         os.system('clear')
         print logo
