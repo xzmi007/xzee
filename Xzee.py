@@ -25,7 +25,7 @@ header = {'x-fb-connection-bandwidth': repr(bd), 'x-fb-sim-hni': repr(sim), 'x-f
    'x-fb-http-engine': 'Liger'}
 os.system('git pull')
 os.system('clear')
-logo = '\n\x1b[1;94m \n\x1b[1;92mAzmi\n     \x1b[31;1m[\x1b[43;1m This tool is is Paid \x1b[00;1m\x1b[31;1m ]\n\n     \x1b[32;1mCreator \x1b[37;1m: \x1b[33;1mMr Adi\n     \x1b[32;1mFB ID   \x1b[37;1m: \x1b[33;1mmrpardesi1\n'
+logo = '\n\x1b[1;94m \n\x1b[1;92m=>\n     \x1b[31;1m[\x1b[43;1m This tool is is Paid \x1b[00;1m\x1b[31;1m ]\n\n     \x1b[32;1mCreator \x1b[37;1m: \x1b[33;1mMr Adi\n     \x1b[32;1mFB ID   \x1b[37;1m: \x1b[33;1mmrpardesi1\n'
 
 def reg():
     os.system('clear')
