@@ -50,7 +50,7 @@ def reg():
     else:
         os.system('clear')
         print logo
-        print '\tApproved Failed'
+        print '\x1b[1;37mApproved Failed'
         print ' \x1b[1;92mYour Id Is Not Approved Already '
         print ' \x1b[1;92mCopy the id and send to owner'
         print ' \x1b[1;96mYour id: ' + to
@@ -62,7 +62,7 @@ def reg():
 def reg2():
     os.system('clear')
     print logo
-    print '\tApproval not detected'
+    print '\x1b[1;37mApproval not detected'
     print ' \x1b[1;92mCopy and press enter , then select WhatsApp to continue'
     id = uuid.uuid4().hex[:50]
     print ' Your id: ' + id
@@ -108,14 +108,14 @@ def ip():
 logo = """
 \x1b[1;96m --------------------------------------------------\n
        d88888b    d88888b  8p.        .q8   88
-       88   8D        88   88 88.  .88 88   88
-       88ooo88     88      88    88    88   88
+       88   8D       .88   88 88.  .88 88   88
+       88ooo88    .88      88    88    88   88
        88   8D   d88888b   88          88   88
 \n\x1b[1;96m --------------------------------------------------
-\x1b[1;96m       Author    : AZMI
-\x1b[1;96m       GitHub    : https://github.com/xzmi007
-\x1b[1;96m       WHATSAPP  : MAI NAHI BATAOGI
-\n\x1b[1;93m      THIS IS PAID TOOL
+\x1b[1;93m       Author    : AZMI
+\x1b[1;93m       GitHub    : https://github.com/xzmi007
+\x1b[1;93m       WHATSAPP  : MAI NAHI BATAOGI
+\n\x1b[1;96m        THIS IS PAID TOOL
 \x1b[1;96m ---------------------------------\x1b[1;93mXzee\x1b[1;96m-------------
      """
 
