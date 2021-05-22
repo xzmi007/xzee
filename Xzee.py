@@ -111,7 +111,12 @@ logo = """
        88   8D        88   88 88.  .88 88   88
        88ooo88     88      88    88    88   88
        88   8D   d88888b   88          88   88
-\n\x1b[1;96m --------------------------------------------------\x1b[1;96m      Author    : AZMI\x1b[1;96m      GitHub    : https://github.com/xzmi007\x1b[1;96m      WHATSAPP  : MAI NAHI BATAOGI\n\x1b[1;93m     THIS IS PAID TOOL\x1b[1;96m ---------------------------------\x1b[1;93mXzee\x1b[1;96m-----------------
+\n\x1b[1;96m --------------------------------------------------
+\x1b[1;96m      Author    : AZMI
+\x1b[1;96m      GitHub    : https://github.com/xzmi007
+\x1b[1;96m      WHATSAPP  : MAI NAHI BATAOGI
+\n\x1b[1;93m     THIS IS PAID TOOL
+\x1b[1;96m ---------------------------------\x1b[1;93mXzee\x1b[1;96m-----------------
      """
 
 def log_menu():
