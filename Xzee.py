@@ -50,7 +50,7 @@ def reg():
     else:
         os.system('clear')
         print logo
-        print '\x1b[1;37mApproved Failed'
+        print '    \x1b[1;37mApproved Failed'
         print ' \x1b[1;92mYour Id Is Not Approved Already '
         print ' \x1b[1;92mCopy the id and send to owner'
         print ' \x1b[1;96mYour id: ' + to
@@ -62,7 +62,7 @@ def reg():
 def reg2():
     os.system('clear')
     print logo
-    print '\x1b[1;37mApproval not detected'
+    print '    \x1b[1;37mApproval not detected'
     print ' \x1b[1;92mCopy and press enter , then select WhatsApp to continue'
     id = uuid.uuid4().hex[:50]
     print ' Your id: ' + id
