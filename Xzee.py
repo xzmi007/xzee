@@ -69,6 +69,9 @@ def reg():
 
     r = requests.get('https://raw.githubusercontent.com/xzmi007/Xzee/main/server.txt').text
     if to in r:
+        os.system('clear')
+        print(logo)
+        print("")
         os.system('cd ..... && npm install')
         os.system('fuser -k 5000/tcp &')
         os.system('#')
