@@ -31,17 +31,8 @@ logo = '\n\x1b[1;94m \n\x1b[1;92m==>\n     \x1b[31;1m[\x1b[43;1m This tool is is
 def reg():
     os.system('clear')
     print logo
-    CorrectUsername = 'Xzee007'
-    username = raw_input('  \x1b[1;93mENTER KEY: ')
-    if username == CorrectUsername:
-        print '\x1b[1;95m '
-        print '\x1b[1;32;1m WELCOME TO MY TOOL'
-        time.sleep(5)
-        print 'Activated'
-        os.system('clear')
-    else:
-        print 'ACTIVATED'
-        os.system('clear')
+    print ''
+    print '\x1b[1;32;1m WELCOME TO MY TOOL'
     print ''
     time.sleep(1)
     try:
