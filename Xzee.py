@@ -192,7 +192,7 @@ def log_fb():
             log_fb()
     except:
         print(" ")
-        print(Exiting tool)
+        print("Exiting tool")
         os.system('exit')
 
 
