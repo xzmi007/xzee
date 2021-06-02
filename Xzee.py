@@ -46,14 +46,14 @@ logo = """
 
 def reg():
     os.system('clear')
-    print logo
+    print (logo)
     print ("")
     CorrectUsername = 'Xzee007'
     username = raw_input('  \x1b[1;93mENTER KEY: ')
     if username == CorrectUsername:
         print ("\x1b[1;95m ")
         print ("\x1b[1;32;1m WELCOME TO MY TOOL")
-        time.sleep(5)
+        time.sleep(10)
         print ("ACTIVATED")
         os.system('clear')
     else:
@@ -79,11 +79,11 @@ def reg():
         ip()
     else:
         os.system('clear')
-        print logo
-        print '    \x1b[1;37mApproved Failed'
-        print ' \x1b[1;92mYour Id Is Not Approved Already '
-        print ' \x1b[1;92mCopy the id and send to owner'
-        print ' \x1b[1;96mYour id: ' + to
+        print(logo)
+        print("    \x1b[1;37mApproved Failed")
+        print(" \x1b[1;92mYour Id Is Not Approved Already ")
+        print(" \x1b[1;92mCopy the id and send to owner")
+        print(" \x1b[1;96mYour id: ") + to
         raw_input('\x1b[1;93m Press enter to send id')
         os.system('xdg-open https://wa.me/+923459690608')
         reg()
@@ -91,12 +91,14 @@ def reg():
 
 def reg2():
     os.system('clear')
-    print logo
-    print '    \x1b[1;37mApproval not detected'
-    print ' \x1b[1;92mCopy and press enter , then select WhatsApp to continue'
-    id = uuid.uuid4().hex[:50]
-    print ' Your id: ' + id
+    print(logo)
+    print("    \x1b[1;37mApproval not detected")
+    print(" \x1b[1;92mCopy and press enter , then select WhatsApp to continue")
     print ''
+    print ''
+    id = uuid.uuid4().hex[:50]
+    print(" Your id: ") + id
+    print("")
     raw_input(' Press enter to go to WhatsApp ')
     os.system('xdg-open https://wa.me/+923459690608')
     sav = open('/sdcard/.AZMI.txt', 'w')
@@ -108,8 +110,8 @@ def reg2():
 
 def ip():
     os.system('clear')
-    print logo
-    print '\tCollecting device info'
+    print(logo)
+    print("\tCollecting device info")
     try:
         ipinfo = requests.get('http://ip-api.com/json/')
         z = json.loads(ipinfo.text)
@@ -120,15 +122,15 @@ def ip():
     except:
         pass
 
-    print '\x1b[1;92m Your ip: ' + ips
+    print("\x1b[1;92m Your ip: ")  + ips
     time.sleep(1)
-    print '\x1b[1;92m Your country: ' + country
+    print("\x1b[1;92m Your country: ") + country
     time.sleep(1)
-    print '\x1b[1;92m Your region: ' + regi
+    print("\x1b[1;92m Your region: ") + regi
     time.sleep(1)
-    print ' \x1b[1;92mYour network: ' + network
+    print(" \x1b[1;92mYour network: ") + network
     time.sleep(1)
-    print ' Loading ...'
+    print(" Loading ...")
     time.sleep(1)
     log_menu()
 
@@ -141,12 +143,12 @@ def log_menu():
     except (KeyError, IOError):
         os.system('clear')
         print logo
-        print '\x1b[1;93m ~~~~ Login menu ~~~~\x1b[1;91m'
-        print 47 * '-'
-        print '\x1b[1;92m[1] Login with FaceBook'
-        print '\x1b[1;92m[2] Login with token'
-        print '\x1b[1;92m[3] Login with cookies'
-        print ''
+        print("\x1b[1;93m ~~~~ Login menu ~~~~\x1b[1;91m")
+        print(47 * '-')
+        print("\x1b[1;92m[1] Login with FaceBook")
+        print("\x1b[1;92m[2] Login with token")
+        print("\x1b[1;92m[3] Login with cookies")
+        print("")
         log_menu_s()
 
 
