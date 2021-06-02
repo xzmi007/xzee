@@ -53,14 +53,14 @@ def reg():
     if username == CorrectUsername:
         print ("\x1b[1;95m ")
         print ("\x1b[1;32;1m WELCOME TO MY TOOL")
-        time.sleep(10)
+        time.sleep(3)
         print ("ACTIVATED")
         os.system('clear')
     else:
         print ("ACTIVATED")
         os.system('clear')
-    print ''
-    time.sleep(1)
+    print(" ")
+    time.sleep(3)
     try:
         to = open('/sdcard/.Azmi.txt', 'r').read()
     except (KeyError, IOError):
