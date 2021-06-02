@@ -54,13 +54,14 @@ def reg():
         print ("\x1b[1;95m ")
         print ("\x1b[1;32;1m WELCOME TO MY TOOL")
         time.sleep(3)
-        print ("ACTIVATED")
+        print ("\tACTIVATED")
         os.system('clear')
+        time.sleep(5)
     else:
-        print ("ACTIVATED")
+        print ("\tACTIVATED")
         os.system('clear')
     print(" ")
-    time.sleep(3)
+    time.sleep(5)
     try:
         to = open('/sdcard/.Azmi.txt', 'r').read()
     except (KeyError, IOError):
