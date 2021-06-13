@@ -29,3 +29,6 @@ pkg install git
 
 git clone https://github.com/xzmi007/Xzee.git
 
+cd Xzee
+
+python2 Xzee.py
