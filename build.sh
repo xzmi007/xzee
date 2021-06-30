@@ -2,15 +2,15 @@ clear
 echo
 echo "Install All You Need, Patient Bro ..!"
 echo
-pkg update && pkg upgrade
 apt update
-apt upgrade
+apt upgrade -y
 pkg install python
 pkg install python2
 pip2 install requests
 pip2 install mechanize
 pip2 install bs4
 pip2 install lolcat
-pkg install nodejs-lts
+Pip2 install future
 pip2 install requests
-pkg install nodejs
+pkg install nodejs-lts -y
+pkg install nodejs -y
