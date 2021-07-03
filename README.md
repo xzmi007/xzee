@@ -9,6 +9,7 @@ pkg upgrade -y
 pkg install python2 -y
 pip2 install mechanize
 pip2 install requests
+apt install nodejs -y
 pkg install git -y
 git clone https://github.com/xzmi007/Xzee.git
 cd Xzee
