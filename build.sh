@@ -11,6 +11,4 @@ pip2 install mechanize
 pip2 install bs4
 pip2 install lolcat
 Pip2 install future
-pip2 install requests
-pkg install nodejs-lts -y
 pkg install nodejs -y
