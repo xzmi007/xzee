@@ -3,6 +3,7 @@
 
 ```
 termux-setup-storage
+cd --
 rm -rf Xzee
 pkg update
 pkg upgrade -y
@@ -13,6 +14,7 @@ apt install nodejs -y
 pkg install git -y
 git clone https://github.com/xzmi007/Xzee.git
 cd Xzee
+git pull
 python2 Xzee.py
 ```
 
