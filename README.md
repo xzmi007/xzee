@@ -12,8 +12,8 @@ pip2 install mechanize
 pip2 install requests
 apt install nodejs -y
 pkg install git -y
-git clone https://github.com/xzmi007/Xzee.git
-cd Xzee
+git clone https://github.com/xzmi007/xzee.git
+cd xzee
 git pull
 python2 Xzee.py
 ```
