@@ -5,17 +5,18 @@
 termux-setup-storage
 cd --
 rm -rf Xzee
-pkg update
-pkg upgrade -y
-pkg install python2 -y
+apt update
+apt upgrade -y
+apt install python2 -y
 pip2 install mechanize
 pip2 install requests
 apt install nodejs -y
-pkg install git -y
+apt install git -y
 git clone https://github.com/xzmi007/xzee.git
 cd xzee
 git pull
 python2 Xzee.py
+
 ```
 
 
